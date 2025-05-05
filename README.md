@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/1fd8e194-e4ce-48e4-9cf1-3e225171b61d)
+
 ---
 
 # 🚔🔓 **Serveur Minecraft - Prison RP ** 🔓🚔
@@ -247,6 +247,8 @@ Accessible avec `/developpeur` (opérateurs uniquement).
 * ⚔️ Accès via hache du staff dans l'inventaire
 * 🔍 Téléportation au-dessus de la prison pour modération
 * 👤 Modes "Personnel" et "Développeur" pour OPs
+
+
 
 ---
 
