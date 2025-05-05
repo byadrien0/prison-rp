@@ -1,0 +1,96 @@
+#--------------------------------------------------------------#
+#                    ~ Bloqueur de coup ~                      #
+#--------------------------------------------------------------#	
+
+on damage of player:
+	if attacker is in world "world":  
+		if attacker is {garde::%attacker%} or {directeur} or {chefgarde} or {bri::%attacker%}:
+			if victim is {garde::%victim%} or {directeur} or {chefgarde} or {bri::%victim%}:		
+				cancel event
+				stop
+
+#--------------------------------------------------------------#
+#                    ~ Anti déco Combat ~                      #
+#--------------------------------------------------------------#	
+
+
+on damage:
+	if attacker is op:
+		stop
+		if victim isn't op:
+			stop
+	if victim is op:
+		stop
+	else:
+		victim is a player
+		attacker is a player
+		if {combat::%victim%} is true:
+			set {time::%victim%} to 60
+			stop
+		if {combat::%attacker%} is true:
+			set {time::%attacker%} to 60
+			stop
+		if {combat::%victim%} is not set:
+			set {time::%victim%} to 60
+			message "&e&l>> &cTu es en combat !" to victim
+			set {combat::%victim%} to true
+			stop
+		if {combat::%attacker%} is not set:
+			set {time::%attacker%} to 60
+			message "&e&l>> &cTu es en combat !" to attacker
+			set {combat::%attacker%} to true
+			stop
+ 
+ 
+every 1 seconds:
+	loop all players:
+		if {combat::%loop-player%} is true:
+			remove 1 from {time::%loop-player%}
+			if {time::%loop-player%} = 0:
+				clear {time::%loop-player%}
+				clear {combat::%loop-player%}
+				wait 2 seconds
+				if loop-player isn't {mort::%loop-player%}:
+					send "&e&l>> &aTu n'es plus en combat !" to loop-player
+				stop
+ 
+command /combat:
+	trigger:
+		if {combat::%player%} is true:
+			message "&e&l>> &cTu es en combat pour encore &f%{time::%player%}% &cseconde(s) !"
+			stop
+		else:
+			message "&e&l>> &aTu n'es plus en combat !"
+			stop
+on quit:
+	if {combat::%player%} is true:
+		kill player
+		broadcast "&c==================================="
+		broadcast "  "
+		broadcast "&e&l>> &6%player% &cs'est déconnecté en combat !"
+		broadcast "&e&l>> &eSanction &a(&bban &e3 &fheures&a)"
+		broadcast "  "
+		broadcast "&c==================================="
+		make console execute command "/tempban %player% 3h &dNon Respect du règlement RôlePlay"
+		clear {time::%player%}
+		clear {combat::%player%}
+		stop
+
+on stop:
+	loop all players:
+		if {combat::%loop-player%} is true:
+			clear {combat::%loop-player%}
+			stop
+	
+
+on join:
+	clear {time::%player%}
+	clear {combat::%player%}
+	stop
+	
+on death:
+	clear {time::%victim%}
+	clear {combat::%victim%}
+	message "&e&l>> &aTu n'es plus en combat !" to victim
+	stop
+	

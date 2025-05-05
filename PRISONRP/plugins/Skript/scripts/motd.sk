@@ -1,0 +1,3 @@
+on server ping:
+	set motd to "§8§l§m---<§e§l§m-----§r§l §6§l%{serveur}%§e§l Network§r§l §e§l§m-----§8§l§m>---§r       §e⊏§6⚫§e⊐§r §f§lVersion §6§l§n2.3§f§l \! Rejoignez-nous \!§r §e⊏§6⚫§e⊐" 
+	stop

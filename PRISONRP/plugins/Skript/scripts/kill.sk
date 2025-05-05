@@ -1,0 +1,41 @@
+on death of player:
+	if player is in world "world": 
+		if player is {normal::%player%}:
+			set {_killdown::%attacker%} to attacker
+			set {killtemps::%attacker%} to 15
+			set {_killpro::%attacker%} to attacker
+			send "&e&l>> &cVous avez tué une personne cooldown de &e5&cs !" to attacker
+			stop
+		if player is {vip::%player%}:
+			set {_killdown::%attacker%} to attacker
+			set {killtemps::%attacker%} to 5
+			set {_killpro::%attacker%} to attacker
+			send "&e&l>> &cVous avez tué une personne cooldown de &e5&cs !" to attacker
+			stop
+
+every 1 seconds:
+	loop all players:
+		if {killdown::%loop-player%} is set:
+			remove 1 from {killtemps::%loop-player%}
+			if {killtemps::%loop-player%} = 0:
+				send "&e&l>> &aTu n'as plus de Cooldown Pour Tes Kills !" to loop-player
+				clear {killtemps::%loop-player%}
+				clear {killdown::%loop-player%}
+				clear {killpro::%loop-player%}
+				stop
+					
+	
+on damage of player:
+	if attacker is in world "world": 
+		if attacker is {killpro::%attacker%}:
+			cancel event
+			send "-------------------------------------------" to {killpro::%attacker%}	
+			send "    &cVous Ne Pouvez Pas Blesser des Joueurs" to {killpro::%attacker%}
+			send "     &aCar Vous êtes Sous Cooldown de &cKills" to {killpro::%attacker%}
+			send " " to {killpro::%attacker%}
+			send "         &fVous Devez Attendre encore &e%{killtemps.%attacker%}% &cSeconds " to {killpro::%attacker%}
+			send "        &9Pour Pouvoir Blaisser Un Joueur" to {killpro::%attacker%}
+			send "-------------------------------------------" to {killpro::%attacker%}
+			stop
+				
+		

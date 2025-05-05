@@ -1,0 +1,84 @@
+NPCS:
+  '20':
+    Commands:
+    - 1~~~§menunormal~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '19':
+    Commands:
+    - 1~~~boutique~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '16':
+    Commands:
+    - 1~~~objectif~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '11':
+    Commands:
+    - 1~~~§vendeur_pioche~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '29':
+    Commands:
+    - 1~~~§vendeur_munition~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '24':
+    Commands:
+    - 1~~~§vendeur_traiteur_1~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '23':
+    Commands:
+    - 1~~~§vendeur_traiteur_2~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '22':
+    Commands:
+    - 1~~~§vendeur_traiteur_3~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '26':
+    Commands:
+    - 1~~~§traiteur_printer~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '28':
+    Commands:
+    - 1~~~§vendeur_printer~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '30':
+    Commands:
+    - 1~~~§vendeur_protection~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '12':
+    Commands:
+    - 1~~~§vendeur_armes~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '31':
+    Commands:
+    - 1~~~§vendeur_de_munition_exterieur~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '32':
+    Commands:
+    - 1~~~§vendeur_nourriture~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '36':
+    Commands:
+    - 1~~~§skin~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+    - 2~~~§skin~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '37':
+    Commands:
+    - 1~~~§skin~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '38':
+    Commands:
+    - 1~~~§skin~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '39':
+    Commands:
+    - 1~~~§vendeur_nourriture~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '41':
+    Commands:
+    - 1~~~/test~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+    - 2~~~§invenst~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '40':
+    Commands:
+    - 1~~~§invenst~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '43':
+    Commands:
+    - 1~~~§vendeur_constructeur~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '44':
+    Commands:
+    - 1~~~§vendeur_parcelle~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '45':
+    Commands:
+    - 1~~~§bome~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '46':
+    Commands:
+    - 1~~~§bombediscution~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '56':
+    Commands:
+    - 1~~~§PrisonRP~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '58':
+    Commands:
+    - 1~~~§HunterZ~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '60':
+    Commands:
+    - 1~~~boutique~~~noPerm~~~BOTH~~~~~~false~~~true~~~false~~~0.0~~~0~~~0~~~false~~~false

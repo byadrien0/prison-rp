@@ -1,0 +1,61 @@
+#--------------------------------------------------------------#
+#                          ~ Info ~                            #
+#--------------------------------------------------------------#
+
+every 130 minutes:
+	loop all players:
+		message "   " to loop-player
+		message "&e&l>> &fVous désirez faire des actions RôlePlay ? &b/action &f!" to loop-player
+		message "   " to loop-player
+	stop
+
+every 100 minutes:
+	loop all players:
+		message "   " to loop-player
+		message "&e&l>> &fVous n'avez pas de microphone ? &b/rp &d<votre texte> &f!" to loop-player
+		message "   " to loop-player
+	stop
+
+every 55 minutes:
+	loop all players:
+		message "   " to loop-player
+		message "&e&l>> &fGagner des Récompenses en votant : &bprison-rp.fr &f!" to loop-player
+		message "   " to loop-player
+	stop
+
+every 140 minutes:
+	loop all players:
+		message "   " to loop-player
+		message "&e&l>> &fVous pouvez vous suicidez en faisant : &b/rip &f!" to loop-player
+		message "   " to loop-player
+	stop
+
+
+every 40 minutes:
+	send "    " to all players
+	send "&7[&cRAPPEL&7] &cPour appeller un membre du staff: &e/helpop <message>" to all players
+	send "    " to all players
+	stop
+	
+every 30 minutes:
+	loop all players:
+		message "   " to loop-player
+		message "&e&l>> &fPour voir vos commandes : &b/help joueur &f!" to loop-player
+		message "   " to loop-player
+	stop
+
+every 80 minutes:
+	loop all players:
+		message "   " to loop-player
+		message "&e&l>> &fPour supprimer l'entierté des blocs de votre parcelle : &b/reset <parcelle_n1> ou <parcelle_n2> etc &f!" to loop-player
+		message "   " to loop-player
+	stop
+	
+	
+every 100 minutes:
+	loop all players:
+		message "   " to loop-player
+		message "&e&l>> &fLe classement des joueurs les plus riches : &b/moneytop &f!" to loop-player
+		message "   " to loop-player
+	stop
+	

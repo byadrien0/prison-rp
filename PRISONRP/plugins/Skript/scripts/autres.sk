@@ -1,0 +1,24 @@
+#--------------------------------------------------------------#
+#                    ~ Commands ~                              #
+#--------------------------------------------------------------#			
+
+command /rp <text>:
+	trigger:
+		if player isn't {lobby::%player%}:
+			loop players in radius 7 of player:
+				send "&5[RP] &8%player%&f> %arg-1%" to loop-player
+				stop
+
+
+
+
+
+
+
+	
+
+	
+
+
+		
+		

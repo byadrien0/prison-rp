@@ -1,0 +1,255 @@
+
+
+#--------------------------------------------------------------#
+#                         ~ Menu Actions ~                     #
+#--------------------------------------------------------------#
+
+command /action:
+	trigger:
+		if player is in world "world": 
+			if player is {garde::%player%} or {bri::%player%} or {armée::%player%} or {chefgarde} or {directeur}:
+				send "&e&l>> &cVous ne pouvez faire des actions car vous êtes dans l'administration de la Prison !" to player
+				stop
+			if player is {prisonnier::%player%}:
+				send "&e&l>> &cTu ne peux pas lancer d'action car tu es Prisonnier !" to player
+				stop
+			if player is {lobby::%player%}:
+				send "&e&l>> &cTu ne peux pas lancer d'action au lobby !" to player
+				stop			
+			else:
+				if player is {news::%player%}:
+					send " " to player
+					send "---------------------------------------------------- " to player	
+					send "          &cAction Impossible &f: Vous êtes &bNouveau" to player
+					send "          &dJouer &e40 &aMinutes &fpour choisir ce Métier" to player
+					send "---------------------------------------------------- " to player
+					send " " to player
+					stop
+				else:
+					wait 1 tick
+					open chest inventory with 3 rows named "&d&lActions &4RolePlay " to player
+					make a gui slot 0 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+					make a gui slot 8 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+					make a gui slot 1 of player with White Stained Glass Pane named "&4PrisonRP" to close	
+					make a gui slot 2 of player with White Stained Glass Pane named "&4PrisonRP" to close	
+					make a gui slot 4 of player with Red Stained Glass Pane named "&4PrisonRP" to close		
+					make a gui slot 6 of player with White Stained Glass Pane named "&4PrisonRP" to close			
+					make a gui slot 9 of player with White Stained Glass Pane named "&4PrisonRP" to close	
+					make a gui slot 10 of player with White Stained Glass Pane named "&4PrisonRP" to close	
+					make a gui slot 11 of player with White Stained Glass Pane named "&4PrisonRP" to close	
+					make a gui slot 12 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+					make a gui slot 14 of player with White Stained Glass Pane named "&4PrisonRP" to close
+					make a gui slot 16 of player with White Stained Glass Pane named "&4PrisonRP" to close	
+					make a gui slot 17 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+					make a gui slot 20 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+					make a gui slot 22 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+					make a gui slot 24 of player with White Stained Glass Pane named "&4PrisonRP" to close			
+					make a gui slot 18 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+					make a gui slot 26 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+					make a gui slot 19 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+					make a gui slot 21 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+					make a gui slot 23 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+					make a gui slot 25 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+					make a gui slot 3 of player with White Stained Glass Pane named "&4PrisonRP" to close
+					make a gui slot 5 of player with White Stained Glass Pane named "&4PrisonRP" to close
+					make a gui slot 13 of player with chest named "&d&lAction Joueur Normal" with lore "  " and "&fType de menu:" and " &a&l> &eActions Roleplay" and "   " and "&c&lGrade Requis:" and " &a&l> &aAucun" and "  " to run:
+						wait 2 tick
+						open chest inventory with 3 rows named "&d&lActions &4RolePlay !" to player
+						make a gui slot 0 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+						make a gui slot 8 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+						make a gui slot 1 of player with White Stained Glass Pane named "&4PrisonRP" to close	
+						make a gui slot 2 of player with White Stained Glass Pane named "&4PrisonRP" to close	
+						make a gui slot 4 of player with Red Stained Glass Pane named "&4PrisonRP" to close		
+						make a gui slot 6 of player with White Stained Glass Pane named "&4PrisonRP" to close			
+						make a gui slot 9 of player with White Stained Glass Pane named "&4PrisonRP" to close	
+						make a gui slot 10 of player with White Stained Glass Pane named "&4PrisonRP" to close
+						make a gui slot 11 of player with Red Stained Glass Pane named "&4PrisonRP" to close				
+						make a gui slot 12 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+						make a gui slot 14 of player with White Stained Glass Pane named "&4PrisonRP" to close
+						make a gui slot 16 of player with White Stained Glass Pane named "&4PrisonRP" to close	
+						make a gui slot 17 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+						make a gui slot 20 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+						make a gui slot 22 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+						make a gui slot 24 of player with White Stained Glass Pane named "&4PrisonRP" to close			
+						make a gui slot 18 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+						make a gui slot 26 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+						make a gui slot 19 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+						make a gui slot 21 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+						make a gui slot 23 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+						make a gui slot 25 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+						make a gui slot 3 of player with White Stained Glass Pane named "&4PrisonRP" to close
+						make a gui slot 5 of player with White Stained Glass Pane named "&4PrisonRP" to close
+						make a gui slot 13 of player with chest named "&d&lPrime Directeur" with lore "  " and "&fType de menu:" and " &a&l> &eDifférentes Primes" and "  " to run:
+							wait 2 tick
+							open chest inventory with 3 rows named "&d&lPrime Menu !" to player
+							make a gui slot 0 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+							make a gui slot 8 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+							make a gui slot 1 of player with White Stained Glass Pane named "&4PrisonRP" to close	
+							make a gui slot 2 of player with White Stained Glass Pane named "&4PrisonRP" to close	
+							make a gui slot 4 of player with Red Stained Glass Pane named "&4PrisonRP" to close		
+							make a gui slot 6 of player with White Stained Glass Pane named "&4PrisonRP" to close			
+							make a gui slot 9 of player with White Stained Glass Pane named "&4PrisonRP" to close	
+							make a gui slot 10 of player with White Stained Glass Pane named "&4PrisonRP" to close	
+							make a gui slot 11 of player with Ender Chest named "&e&lPrime Normal" with lore "   " and "&7Prix: &e15.000 &b€" and "  " and "&e-> &6Prime: &b10.000 &e€" and "&7sur la tête du directeur" and "  " and "&dCondition :" and "   " and " &a&l> &c1 Directeur" and "   " to run:
+								if player is in world "world": 
+									if {money::%player%} is less than 15000:
+										send "&4&l>> &cErreur &4&l<< &e- &cDésolé, mais tu n'as pas assez d'argent !" to player
+										stop
+									else:
+										if {Prime.normal} is set:
+											send "&4&l>> &cErreur &4&l<< &e- &cDésolé, mais une Prime Normal est déjà sur le directeur !" to player
+											stop
+										else:
+											if {directeur} is set:				
+												set {Prime.normal} to {directeur}
+												remove 15000 from {money::%player%}
+												broadcast "&c============================="
+												broadcast "      &eUn Prime &fSur Le &cDirecteur"
+												broadcast "      &ePrime de &f: &c10&e.&c000&b€"
+												broadcast "&c============================="
+												send "   " to player
+												send "&4&l>> &dSuccès &4&l<< &e- &aTu as réussi à mettre une Prime sur &e%{directeur}% &c!" to player					
+												stop
+											else:
+												send "&e&l>>  &cIl n'y a pas de Directeur dans la Prison !"
+												stop
+							make a gui slot 12 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+							make a gui slot 14 of player with White Stained Glass Pane named "&4PrisonRP" to close
+							make a gui slot 16 of player with White Stained Glass Pane named "&4PrisonRP" to close	
+							make a gui slot 17 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+							make a gui slot 20 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+							make a gui slot 22 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+							make a gui slot 24 of player with White Stained Glass Pane named "&4PrisonRP" to close			
+							make a gui slot 18 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+							make a gui slot 26 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+							make a gui slot 19 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+							make a gui slot 21 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+							make a gui slot 23 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+							make a gui slot 25 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+							make a gui slot 3 of player with White Stained Glass Pane named "&4PrisonRP" to close
+							make a gui slot 5 of player with White Stained Glass Pane named "&4PrisonRP" to close
+							make a gui slot 13 of player with Ender Chest named "&e&lPrime Medium" with lore "   " and "&7Prix: &e90.000 &b€" and "  " and "&e-> &6Prime: &b80.000 &e€" and "&7sur la tête du directeur" and "  " and "&dCondition :" and "   " and " &a&l> &c1 Directeur" and " &a&l> &c1 Gardes" and "   " to run:
+								if player is in world "world": 
+									if {money::%player%} is less than 15000:
+										send "&4&l>> &cErreur &4&l<< &e- &cDésolé, mais tu n'as pas assez d'argent !" to player
+										stop
+									else:
+										if {Prime.medium} is set:
+											send "&4&l>> &cErreur &4&l<< &e- &cDésolé, mais une Prime Medium est déjà sur le directeur !" to player
+											stop
+										else:
+											if {directeur} is set:
+												if {garde.nb} is less than 1:
+													set {Prime.medium} to {directeur}
+													remove 90000 from {money::%player%}
+													broadcast "&c============================="
+													broadcast "      &eUn Prime &fSur Le &cDirecteur"
+													broadcast "      &ePrime de &f: &c80&e.&c000&b€"
+													broadcast "&c============================="
+													send "   " to player
+													send "&4&l>> &dSuccès &4&l<< &e- &aTu as réussi à mettre une Prime sur &e%{directeur}% &c!" to player							
+													stop
+												else:
+													send "&4&l>> &cErreur &4&l<< &e- &cDésolé, mais il y a moins de 1 Gardes dans la Prison !" to player
+													stop
+											else:
+												send "&4&l>> &cErreur &4&l<< &e- &cDésolé, mais Il n'y a pas de Directeur dans la Prison !" to player
+												stop
+							make a gui slot 7 of player with White Stained Glass Pane named "&4PrisonRP" to close
+							make a gui slot 15 of player with Ender Chest named "&e&lPrime Extrême" with lore "   " and "&7Prix: &e150.000 &b€" and "  " and "&e-> &6Prime: &b135.000 &e€" and "&7sur la tête du directeur" and "  " and "&dCondition :" and "   " and " &a&l> &c1 Directeur" and " &a&l> &c2 Gardes" and "   " to run:
+								if player is in world "world": 
+									if {money::%player%} is less than 15000:
+										send "&4&l>> &cErreur &4&l<< &e- &cDésolé, mais tu n'as pas assez d'argent !" to player
+										stop
+									else:
+										if {Prime.extrême} is set:
+											send "&4&l>> &cErreur &4&l<< &e- &cDésolé, mais une Prime Extreme est déjà sur le directeur !" to player
+											stop
+										else:
+											if {directeur} is set:
+												if {garde.nb} is less than 2:
+													set {Prime.extrême} to {directeur}
+													remove 150000 from {money::%player%}
+													broadcast "&c============================="
+													broadcast "      &eUn Prime &fSur Le &cDirecteur"
+													broadcast "      &ePrime de &f: &c135&e.&c000&b€"
+													broadcast "&c============================="
+													send "   " to player
+													send "&4&l>> &dSuccès &4&l<< &e- &aTu as réussi à mettre une Prime sur &e%{directeur}% &c!" to player							
+													stop
+												else:
+													send "&4&l>> &cErreur &4&l<< &e- &cDésolé, mais il y a moins de 2 Gardes dans la Prison !" to player
+													stop
+											else:
+												send "&4&l>> &cErreur &4&l<< &e- &cDésolé, mais Il n'y a pas de Directeur dans la Prison !" to player
+												stop
+							stop
+						make a gui slot 7 of player with White Stained Glass Pane named "&4PrisonRP" to close
+						make a gui slot 15 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+						stop
+					make a gui slot 7 of player with White Stained Glass Pane named "&4PrisonRP" to close
+					make a gui slot 15 of player with White Stained Glass Pane named "&4PrisonRP" to close
+					stop
+
+on death of player:
+	if player is in world "world": 
+		if {Prime.normal} is set:
+			if "%victim%" is {directeur}:
+				delete {Prime.normal}
+				add 10000 to {money::%attacker%}
+				broadcast " "	
+				broadcast "&c============================="
+				broadcast " "
+				broadcast "      &eRécompense &fde &e: &c10&e.&c000&b€"
+				broadcast "      &aPour &f: &e%attacker%"
+				broadcast "  "
+				broadcast "&c============================="
+				broadcast " "
+				stop
+
+		if {Prime.medium} is set:
+			if "%victim%" is {directeur}:
+				delete {Prime.medium}
+				add 80000 to {money::%attacker%}
+				broadcast " "	
+				broadcast "&c============================="
+				broadcast " "
+				broadcast "      &eRécompense &fde &e: &c80&e.&c000&b€"
+				broadcast "      &aPour &f: &e%attacker%"
+				broadcast "  "
+				broadcast "&c============================="
+				broadcast " "
+				stop
+
+		if {Prime.extrême} is set:
+			if "%victim%" is {directeur}:
+				delete {Prime.extrême}
+				add 135000 to {money::%attacker%}
+				broadcast " "	
+				broadcast "&c============================="
+				broadcast " "
+				broadcast "      &eRécompense &fde &e: &c135&e.&c000&b€"
+				broadcast "      &aPour &f: &e%attacker%"
+				broadcast "  "
+				broadcast "&c============================="
+				broadcast " "
+				stop
+
+command /clearprime <text>:
+	permission: staff.prime
+	trigger:
+		if player is {staff.service::%player%}:
+			if arg 1 is "normal":
+				delete {Prime.normal}
+				send "&cVous avez retiré la Prime !"
+				stop
+			if arg 1 is "medium":
+				delete {Prime.medium}
+				send "&cVous avez retiré la Prime !"
+				stop
+			if arg 1 is "extrême":
+				delete {Prime.extrême}
+				send "&cVous avez retiré la Prime !"
+				stop			
+
+				

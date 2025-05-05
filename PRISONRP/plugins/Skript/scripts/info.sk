@@ -1,0 +1,23 @@
+#--------------------------------------------------------------#
+#                          ~ Info ~                            #
+#--------------------------------------------------------------#
+
+command /info:
+	trigger:
+		if player is in world "world": 
+			send " " to player	
+			send "&bInfo(s) événement(s):" to player
+			send " " to player	
+			send "&aAction RolePlay &f: " to player
+			send " " to player
+			if {couvrefeu} is true:
+				send "&e* &6CouvreFeu &fEst &dActif " to player
+			if {couvrefeu} isn't true:
+				send "&e* &6CouvreFeu &fEst &dInactif " to player
+			if {prime.all} is true:
+				send "&e* &6Prime &fSur Le &6Directeur &fEst &dActif " to player
+			if {prime.all} isn't true:
+				send "&e* &6Prime &fSur Le &6Directeur &fEst &dInactif " to player
+			send " " to player			
+			stop
+			

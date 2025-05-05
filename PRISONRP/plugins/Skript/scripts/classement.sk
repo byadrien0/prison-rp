@@ -1,0 +1,63 @@
+
+			
+command /moneytop:
+    trigger:
+        loop 3 times:
+            set {_%loop-number%p} to "En attente" 
+            set {_%loop-number%} to 0
+        loop {money::*}:
+            if {money::%loop-index%} > {_1}:
+                set {_nb} to 3
+                set {_nb-1} to 2
+                loop 2 times:
+                    set {_%{_nb}%} to {_%{_nb-1}%}
+                    set {_%{_nb}%p} to {_%{_nb-1}%p}
+                    remove 1 from {_nb}
+                    remove 1 from {_nb-1}
+                set {_1} to loop-value
+                set {_1p} to loop-index
+            else:
+                if {money::%loop-index%} > {_2}:
+                    set {_3} to {_2}
+                    set {_3p} to {_2p}
+                    set {_2} to loop-value
+                    set {_2p} to loop-index
+                else:
+                    if {money::%loop-index%} > {_3}:
+                        set {_3} to loop-value
+                        set {_3p} to loop-index
+        send "&b① &6%{_1p}% - &c%{_1}% &r€" to player  
+        send "&b② &6%{_2p}% - &c%{_2}% &r€" to player 
+        send "&b③ &6%{_3p}% - &c%{_3}% &r€" to player    
+        stop
+		
+command /balancetop:
+    trigger:
+        loop 3 times:
+            set {_%loop-number%p} to "En attente" 
+            set {_%loop-number%} to 0
+        loop {money::*}:
+            if {money::%loop-index%} > {_1}:
+                set {_nb} to 3
+                set {_nb-1} to 2
+                loop 2 times:
+                    set {_%{_nb}%} to {_%{_nb-1}%}
+                    set {_%{_nb}%p} to {_%{_nb-1}%p}
+                    remove 1 from {_nb}
+                    remove 1 from {_nb-1}
+                set {_1} to loop-value
+                set {_1p} to loop-index
+            else:
+                if {money::%loop-index%} > {_2}:
+                    set {_3} to {_2}
+                    set {_3p} to {_2p}
+                    set {_2} to loop-value
+                    set {_2p} to loop-index
+                else:
+                    if {money::%loop-index%} > {_3}:
+                        set {_3} to loop-value
+                        set {_3p} to loop-index
+        send "&b① &6%{_1p}% - &c%{_1}% &r€" to player 
+        send "&b② &6%{_2p}% - &c%{_2}% &r€" to player 
+        send "&b③ &6%{_3p}% - &c%{_3}% &r€" to player 
+        stop

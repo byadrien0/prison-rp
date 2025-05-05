@@ -1,0 +1,154 @@
+users:
+  0d61d4e4-8fc7-325e-9819-12b863940029:
+    lastname: Azetcd
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - moneyprinters.use.coal
+  0ddcbfdf-4a6f-327e-aa34-02bce1892c24:
+    lastname: Tekusa
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - cartel.MS13
+    - joueur.normal
+    - moneyprinters.use.bronze
+    - moneyprinters.use.coal
+    - moneyprinters.use.diamant
+    - moneyprinters.use.diamond
+    - moneyprinters.use.fer
+    - moneyprinters.use.gold
+    - moneyprinters.use.iron
+  295a3256-2da0-3848-ad09-735d2627c0b7:
+    lastname: Sumio_
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - moneyprinters.use.bronze
+    - moneyprinters.use.fer
+  3df16109-1f89-3f95-a20f-fc98a369eeeb:
+    lastname: LeCezarium
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - moneyprinters.use.bronze
+  4ac11307-f8b5-386c-a562-f09b5f552e50:
+    lastname: Drien
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - moneyprinters.use.bronze
+    - moneyprinters.use.diamant
+    - moneyprinters.use.diamond
+    - moneyprinters.use.fer
+  4c8a9305-6dd0-36e9-ab75-f84d6771bb4e:
+    lastname: Gourou
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - moneyprinters.use.bronze
+  61d024c9-5264-3c17-ab88-ccd3fd3c0299:
+    lastname: TriToX74
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - cartel.MS13
+  79fda397-7688-3e43-a513-3f6c13876a9e:
+    lastname: _vTxiroX
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - moneyprinters.use.bronze
+    - moneyprinters.use.diamant
+    - moneyprinters.use.fer
+  8005149b-b965-3afa-b7c5-87c6d4c165eb:
+    lastname: Matteo_25
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - moneyprinters.use.bronze
+    - moneyprinters.use.fer
+  8c49bfd6-b2d5-3b93-9d5d-d8f4a7e25ae1:
+    lastname: _IRuLing_
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - cartel.MS13
+    - cartel.chef
+    - cartel.chefMS13
+    - joueur.vip+
+    - moneyprinters.use.bronze
+  950c8e6e-1153-3dd8-9a2a-709fbf274658:
+    lastname: DraXyAdrien
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - moneyprinters.use.bronze
+    - moneyprinters.use.diamant
+    - moneyprinters.use.diamond
+    - moneyprinters.use.diamond.hype
+    - moneyprinters.use.diamond.vip
+    - moneyprinters.use.diamond.vip+
+    - moneyprinters.use.fer
+  9cc43083-256a-3faa-a2dc-a0f16ad5998b:
+    lastname: Apoxxxxxxxxx78
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - moneyprinters.use.diamant
+    - moneyprinters.use.diamond
+  9d149a91-8335-3eb0-9025-340e7840c2fd:
+    lastname: _M0wgli
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - moneyprinters.use.bronze
+  a7c04a8d-fca2-3676-8f1f-a16485df3f86:
+    lastname: 4_4ck3r
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - moneyprinters.use.bronze
+    - moneyprinters.use.diamant
+    - moneyprinters.use.fer
+  b1137bab-1e43-33d6-bd58-3882f4bda6e1:
+    lastname: Turika
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - cartel.Bratva
+  bce257f5-18dd-3b56-8958-2743dc0d8964:
+    lastname: LeStyloRose
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - moneyprinters.use.bronze
+  c1311f3f-055d-371c-986f-3a421cfcae62:
+    lastname: TexMaw
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - moneyprinters.use.bronze
+    - moneyprinters.use.fer
+  ElgarL:
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  f0f3957a-be79-3d5b-8aea-19211e5f952c:
+    lastname: Sk0uSk0n
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - moneyprinters.use.bronze
+    - moneyprinters.use.fer
+  KHobbits:
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  snowleo:
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms

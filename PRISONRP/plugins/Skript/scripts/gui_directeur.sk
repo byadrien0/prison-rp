@@ -1,0 +1,134 @@
+
+
+#--------------------------------------------------------------#
+#                    ~ Menu Administration Directeur ~         #
+#--------------------------------------------------------------#
+
+on load:
+	set {couvrefeu.all} to false
+	set {couvrefeu} to false
+	stop
+
+command /§administreee:
+	trigger:
+		if player is in world "world": 
+			if player is {directeur}:
+				wait 3 tick
+				open chest inventory with 3 rows named "&4&lAdministration Prison !" to player
+				make a gui slot 0 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+				make a gui slot 8 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+				make a gui slot 1 of player with White Stained Glass Pane named "&4PrisonRP" to close	
+				make a gui slot 2 of player with Red Stained Glass Pane named "&4PrisonRP" to close	
+				make a gui slot 4 of player with Red Stained Glass Pane named "&4PrisonRP" to close		
+				make a gui slot 6 of player with Red Stained Glass Pane named "&4PrisonRP" to close			
+				make a gui slot 9 of player with White Stained Glass Pane named "&4PrisonRP" to close	
+				make a gui slot 10 of player with Red Stained Glass Pane named "&4PrisonRP" to close	
+				make a gui slot 11 of player with White Stained Glass Pane named "&4PrisonRP" to close
+				make a gui slot 12 of player with Red Stained Glass Pane named "&4PrisonRP" to close		
+				make a gui slot 14 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+				make a gui slot 16 of player with Red Stained Glass Pane named "&4PrisonRP" to close	
+				make a gui slot 17 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+				make a gui slot 20 of player with Red Stained Glass Pane named "&4PrisonRP" to close		
+				make a gui slot 22 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+				make a gui slot 24 of player with Red Stained Glass Pane named "&4PrisonRP" to close			
+				make a gui slot 18 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+				make a gui slot 26 of player with Red Stained Glass Pane named "&4PrisonRP" to close
+				make a gui slot 19 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+				make a gui slot 21 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+				make a gui slot 23 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+				make a gui slot 25 of player with White Stained Glass Pane named "&4PrisonRP" to close		
+				make a gui slot 3 of player with White Stained Glass Pane named "&4PrisonRP" to close
+				make a gui slot 5 of player with White Stained Glass Pane named "&4PrisonRP" to close
+				make a gui slot 13 of player with Redstone Block named "&c&lDémarer le Couvre Feu" with lore "   " and "&fCette action vous coutera:" and "&e1.000€" and "   " and "&dTemps de Rechargement" and "&a5 minutes"  and "   " to run: 		
+					if player is in world "world":  
+						if {money::%player%} is smaller than 1000:
+							send "&e&l>> &cVous n'avez pas assez d'Argent !" to {directeur}
+							stop
+						if {couvrefeu.all} isn't false:	
+							send "&e&l>> &cL'action est déjà actif ou se recharge !" to {directeur}
+							stop				
+						if {couvrefeu.all} is false: 	
+							set {couvrefeu} to true
+							set {couvrefeu.all} to true 
+							remove 1000 from {money::%player%}   
+							set {minute.COUVREFEU.temps} to 4
+							broadcast "&4------------------[&a&lCouvre feu&4]------------------"
+							broadcast ""
+							broadcast "     &cLe directeur vient de lancer un couvre feu!"
+							broadcast " &cSi les prisonniers ne sont pas dans leurs cellules les"
+							broadcast "     &cgardes ont l'autorisation de les abbatres!"
+							broadcast ""
+							broadcast "&4------------------------------------------------"
+
+							loop {prisonnier::*}:
+								teleport {prisonnier::*} to location(-1290.274, 8, 1269.494, world("world"), -89.5, 5.4)						
+							wait 4 minutes
+							set {couvrefeu} to false 	
+							teleport {prisonnier::*} to location(-1282, 8, 1248, world("world"), 0, 0)
+							broadcast "&4------------------[&a&lCouvre feu&4]------------------"
+							broadcast ""
+							broadcast "                   &2Le couvre feu est terminé!"
+							broadcast ""
+							broadcast "&4-------------------------------------------------"
+							wait 5 minutes
+							set {couvrefeu.all} to false
+							send "&e&l>> &aLe Couvre est maintenant rechargé !" to {directeur}
+							stop				
+				
+
+				make a gui slot 7 of player with White Stained Glass Pane named "&4PrisonRP" to close
+				make a gui slot 15 of player with White Stained Glass Pane named "&4PrisonRP" to close
+				stop
+			else:
+				stop
+			
+
+#--------------------------------------------------------------#
+#                    ~ Intéraction couvrefeu ~                 #
+#--------------------------------------------------------------#
+
+every 3 seconds:
+	if {couvrefeu} is true:
+		send title "&c⚠&4Couvre Feu &a&l✓&c⚠" with subtitle "&dVeuillez patienter &b%{minute.COUVREFEU.temps}%&em" to {prisonnier::*}	
+		stop
+
+		
+on join:
+	if {couvrefeu.all} is true:
+		if player is {prisonnier::*}:
+			teleport {prisonnier::*} to location(-1290.274, 8, 1269.494, world("world"), -89.5, 5.4)
+			loop {minute.COUVREFEU.temps} times:	
+				send title "&c⚠&4Couvre Feu &a&l✓&c⚠" with subtitle "&dVeuillez patienter &b%{minute.COUVREFEU.temps}%&em" to {prisonnier::*}
+				stop
+
+	
+
+
+every minutes:
+	if {couvrefeu.all} is true:
+		remove 1 from {minute.COUVREFEU.temps}
+		stop
+		
+command /clearcouvrefeu:
+	trigger:
+		if player is {staff.service::%player%} or {dev::%player%}:
+			if player is in world "world":  
+				set {couvrefeu} to false
+				set {couvrefeu.all} to false 	
+				teleport {prisonnier::*} to location(-1282, 8, 1248, world("world"), 0, 0)		
+				broadcast "&4------------------[&a&lCouvre feu&4]------------------"
+				broadcast ""
+				broadcast "                   &2Le couvre feu est terminé!"
+				broadcast ""
+				broadcast "&4-------------------------------------------------"		
+				send "&cVous venez de retirer le couvre feu !" 		
+				stop		
+
+
+on command:
+	if player is in world "world":  
+		if {couvrefeu} is true:
+			if player is {prisonnier::%player%}:
+				cancel event
+				send "&e&l>> &cVous ne pouvez pas réaliser des commandes car vous êtes en cellule !"
+				stop

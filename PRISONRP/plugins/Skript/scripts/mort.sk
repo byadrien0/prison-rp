@@ -1,0 +1,331 @@
+#--------------------------------------------------------------#
+#                     ~ Death or Quit ~                        #
+#--------------------------------------------------------------#
+	
+on death of player:
+	if player is in world "world": 
+		heal player
+		wait 1 tick
+		hide the player from all players
+		if player is in world "world": 
+			wait 3 tick
+			reveal the player from all players
+			hide the player from all players
+			if player is {echappe.prisonnier::%player%}:
+				wait 3 tick		
+				set {mort::%player%} to player
+				if player is {normal::%player%}:
+					set {tempsmort::%player%} to 40	
+				if player is {vip::%player%}:
+					set {tempsmort::%player%} to 15	
+				set max health of player to 10
+				teleport player to location(-1225, 11, 1262, world("world"), 90, 0)
+				make console execute command "/effect clear %player%"		
+				set player's game mode to spectator		
+				make console execute command "/manuadd %player% prisonnier"	
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%player%}%&es" to player	
+				clear {echappe.prisonnier::%player%}
+				stop	
+			if player is {prisonnier::%player%}:
+				wait 3 tick		
+				set {mort::%player%} to player
+				if player is {normal::%player%}:
+					set {tempsmort::%player%} to 40	
+				if player is {vip::%player%}:
+					set {tempsmort::%player%} to 15	
+				set max health of player to 10
+				teleport player to location(-1225, 11, 1262, world("world"), 90, 0)
+				make console execute command "/effect clear %player%"		
+				set player's game mode to spectator		
+				make console execute command "/manuadd %player% prisonnier"	
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%player%}%&es" to player		
+				remove 1 from {prisonnier.nb}		
+				clear {prisonnier::%player%}	
+				stop
+			if player is {directeur}:
+				wait 3 tick		
+				set {mort::%player%} to player
+				if player is {normal::%player%}:
+					set {tempsmort::%player%} to 40	
+				if player is {vip::%player%}:
+					set {tempsmort::%player%} to 15	
+				set max health of player to 10
+				teleport player to location(-1225, 11, 1262, world("world"), 90, 0)
+				make console execute command "/effect clear %player%"		
+				set player's game mode to spectator		
+				make console execute command "/manuadd %player% prisonnier"	
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%player%}%&es" to player	
+				remove 1 from {directeur.nb}
+				clear {directeur}
+				stop
+			if player is {garde::%player%}:
+				wait 3 tick		
+				set {mort::%player%} to player
+				if player is {normal::%player%}:
+					set {tempsmort::%player%} to 40	
+				if player is {vip::%player%}:
+					set {tempsmort::%player%} to 15	
+				set max health of player to 10
+				teleport player to location(-1225, 11, 1262, world("world"), 90, 0)
+				make console execute command "/effect clear %player%"		
+				set player's game mode to spectator		
+				make console execute command "/manuadd %player% prisonnier"	
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%player%}%&es" to player	
+				remove 1 from {garde.nb}
+				clear {garde::%player%}
+				stop		
+			if player is {bri::%player%}:
+				wait 3 tick		
+				set {mort::%player%} to player
+				if player is {normal::%player%}:
+					set {tempsmort::%player%} to 40	
+				if player is {vip::%player%}:
+					set {tempsmort::%player%} to 15	
+				set max health of player to 10
+				teleport player to location(-1225, 11, 1262, world("world"), 90, 0)
+				make console execute command "/effect clear %player%"		
+				set player's game mode to spectator		
+				make console execute command "/manuadd %player% prisonnier"	
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%player%}%&es" to player	
+				remove 1 from {bri.nb}
+				clear {bri::%player%}
+				stop	
+			if player is {chefgarde}:
+				set {mort::%player%} to player
+				if player is {normal::%player%}:
+					set {tempsmort::%player%} to 40	
+				if player is {vip::%player%}:
+					set {tempsmort::%player%} to 15	
+				set max health of player to 10
+				teleport player to location(-1225, 11, 1262, world("world"), 90, 0)
+				make console execute command "/effect clear %player%"		
+				set player's game mode to spectator		
+				make console execute command "/manuadd %player% prisonnier"	
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%player%}%&es" to player
+				send "&e>> &eLe chef des Gardes est mort !" to all players
+				remove 1 from {chefgarde.nb}
+				clear {chefgarde}
+				stop	
+
+			if player is {echappe.garde::%player%}:
+				wait 3 tick		
+				set {mort::%player%} to player
+				if player is {normal::%player%}:
+					set {tempsmort::%player%} to 40	
+				if player is {vip::%player%}:
+					set {tempsmort::%player%} to 15	
+				set max health of player to 10
+				teleport player to location(-1225, 11, 1262, world("world"), 90, 0)
+				make console execute command "/effect clear %player%"		
+				set player's game mode to spectator		
+				make console execute command "/manuadd %player% prisonnier"	
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%player%}%&es" to player	
+				clear {echappe.garde::%player%}
+				stop
+			if player is {echappe.chefgarde::%player%}:
+				wait 3 tick		
+				set {mort::%player%} to player
+				if player is {normal::%player%}:
+					set {tempsmort::%player%} to 40	
+				if player is {vip::%player%}:
+					set {tempsmort::%player%} to 15	
+				set max health of player to 10
+				teleport player to location(-1225, 11, 1262, world("world"), 90, 0)
+				make console execute command "/effect clear %player%"		
+				set player's game mode to spectator		
+				make console execute command "/manuadd %player% prisonnier"	
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%player%}%&es" to player	
+				clear {echappe.chefgarde}
+				stop
+			if player is {echappe.directeur::%player%}:
+				wait 3 tick		
+				set {mort::%player%} to player
+				if player is {normal::%player%}:
+					set {tempsmort::%player%} to 40	
+				if player is {vip::%player%}:
+					set {tempsmort::%player%} to 15	
+				set max health of player to 10
+				teleport player to location(-1225, 11, 1262, world("world"), 90, 0)
+				make console execute command "/effect clear %player%"		
+				set player's game mode to spectator		
+				make console execute command "/manuadd %player% prisonnier"	
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%player%}%&es" to player	
+				clear {echappe.directeur}
+				stop
+			if player is {echappe.bri::%player%}:
+				wait 3 tick		
+				set {mort::%player%} to player
+				if player is {normal::%player%}:
+					set {tempsmort::%player%} to 40	
+				if player is {vip::%player%}:
+					set {tempsmort::%player%} to 15	
+				set max health of player to 10
+				teleport player to location(-1225, 11, 1262, world("world"), 90, 0)
+				make console execute command "/effect clear %player%"		
+				set player's game mode to spectator		
+				make console execute command "/manuadd %player% prisonnier"	
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%player%}%&es" to player	
+				clear {echappe.bri::%player%}
+				stop
+
+
+
+on quit:
+	if player is in world "world": 
+		if player is {directeur}:
+			set {mort::%player%} to player
+			set {tempsmort::%player%} to 30	
+			set max health of player to 10
+			teleport player to location(-1225, 11, 1262, world("world"), 90, 0)
+			make console execute command "/effect clear %player%"		
+			set player's game mode to spectator		
+			make console execute command "/manuadd %player% prisonnier"	
+			send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%player%}%&es" to player	
+			broadcast "&e>> &eLe Directeur est mort !"
+			hide the player from all players
+			remove 1 from {directeur.nb}
+			clear {directeur}
+			stop
+		if player is {chefgarde}:
+			set {mort::%player%} to player
+			set {tempsmort::%player%} to 30	
+			set max health of player to 10
+			teleport player to location(-1225, 11, 1262, world("world"), 90, 0)
+			make console execute command "/effect clear %player%"		
+			set player's game mode to spectator		
+			make console execute command "/manuadd %player% prisonnier"	
+			send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%player%}%&es" to player
+			hide the player from all players
+			send "&e>> &eLe chef des Gardes est mort !" to all players
+			remove 1 from {chefgarde.nb}
+			clear {chefgarde}
+			stop
+		if player is {garde::%player%}:	
+			set {mort::%player%} to player
+			set {tempsmort::%player%} to 30	
+			set max health of player to 10
+			teleport player to location(-1225, 11, 1262, world("world"), 90, 0)
+			make console execute command "/effect clear %player%"		
+			set player's game mode to spectator		
+			make console execute command "/manuadd %player% prisonnier"	
+			send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%player%}%&es" to player
+			hide the player from all players
+			remove 1 from {garde.nb}
+			clear {garde::%player%}
+			stop		
+		if player is {bri::%player%}:
+			wait 3 tick		
+			set {mort::%player%} to player
+			set {tempsmort::%player%} to 30	
+			set max health of player to 10
+			teleport player to location(-1225, 11, 1262, world("world"), 90, 0)
+			make console execute command "/effect clear %player%"		
+			set player's game mode to spectator		
+			make console execute command "/manuadd %player% prisonnier"	
+			send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%player%}%&es" to player	
+			hide the player from all players
+			remove 1 from {bri.nb}
+			clear {bri::%player%}
+			stop			
+
+
+
+every 1 seconds:
+	loop all players:
+		if {mort::%loop-player%} is set:
+			remove 1 from {tempsmort::%loop-player%}
+			if {tempsmort::%loop-player%} = 40:
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%loop-player%}%&es" to loop-player
+				set loop-player's game mode to spectator
+				teleport loop-player to location(-1225, 11, 1262, world("world"), 90, 0)
+				stop
+			if {tempsmort::%loop-player%} = 35:
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%loop-player%}%&es" to loop-player
+				set loop-player's game mode to spectator
+				teleport loop-player to location(-1225, 11, 1262, world("world"), 90, 0)
+				stop
+			if {tempsmort::%loop-player%} = 30:
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%loop-player%}%&es" to loop-player
+				set loop-player's game mode to spectator
+				teleport loop-player to location(-1225, 11, 1262, world("world"), 90, 0)
+				stop
+			if {tempsmort::%loop-player%} = 25:
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%loop-player%}%&es" to loop-player
+				set loop-player's game mode to spectator
+				teleport loop-player to location(-1225, 11, 1262, world("world"), 90, 0)
+				stop
+			if {tempsmort::%loop-player%} = 20:
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%loop-player%}%&es" to loop-player
+				set loop-player's game mode to spectator
+				teleport loop-player to location(-1225, 11, 1262, world("world"), 90, 0)
+				stop
+			if {tempsmort::%loop-player%} = 15:
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%loop-player%}%&es" to loop-player
+				set loop-player's game mode to spectator
+				teleport loop-player to location(-1225, 11, 1262, world("world"), 90, 0)
+				stop
+			if {tempsmort::%loop-player%} = 10:
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%loop-player%}%&es" to loop-player
+				set loop-player's game mode to spectator
+				teleport loop-player to location(-1225, 11, 1262, world("world"), 90, 0)
+				stop
+			if {tempsmort::%loop-player%} = 5:
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%loop-player%}%&es" to loop-player
+				set loop-player's game mode to spectator
+				teleport loop-player to location(-1225, 11, 1262, world("world"), 90, 0)
+				stop
+			if {tempsmort::%loop-player%} = 4:
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%loop-player%}%&es" to loop-player
+				set loop-player's game mode to spectator
+				teleport loop-player to location(-1225, 11, 1262, world("world"), 90, 0)
+				stop				
+			if {tempsmort::%loop-player%} = 3:
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%loop-player%}%&es" to loop-player
+				set loop-player's game mode to spectator
+				teleport loop-player to location(-1225, 11, 1262, world("world"), 90, 0)
+				stop				
+			if {tempsmort::%loop-player%} = 2:
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%loop-player%}%&es" to loop-player
+				set loop-player's game mode to spectator
+				teleport loop-player to location(-1225, 11, 1262, world("world"), 90, 0)
+				stop
+			if {tempsmort::%loop-player%} = 1:
+				send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%loop-player%}%&es" to loop-player	
+				clear {tempsmort::%loop-player%}
+				clear {mort::%loop-player%}
+				clear loop-player's inventory
+				make console execute command "/gamemode survival %loop-player%"
+				teleport loop-player to location(-4.46, 67, 29.42, world("lobby"), 0, 3)
+				send "&e&l>> &6Vous êtes mort donc vous devez recommencer une nouvelle vie RP sous une autre identité !" to loop-player
+				reveal the loop-player from all players		
+				clear {prisonrp::%loop-player%}
+				set {lobby::%loop-player%} to loop-player
+				set current hotbar slot of loop-player to 0
+				if loop-player is {staffs::%loop-player%} or op:
+					set slot 0 of loop-player to Diamond Axe named "&dMode Staff &7(Clique droit)"
+				set slot 3 of loop-player to Clock named "&aMenu des Jeux DraXy Network &7(Clique droit)"
+				set slot 5 of loop-player to gold ingot of sharpness 1 named "&eBoutique &7(Clique droit)"
+				if loop-player is op:
+					set slot 8 of loop-player to Emerald named "&6Mode développeur &7(Clique droit)"
+				stop
+
+on any move:
+	if player is in world "world": 
+		if player is {mort::%player%}:
+			cancel event
+			stop
+
+on join:
+	if player is {mort::%player%}:				
+		teleport player to location(-1225, 11, 1262, world("world"), 90, 0)	
+		set player's game mode to spectator
+		make console execute command "/manuadd %player% prisonnier"
+		set player's game mode to spectator
+		set player's game mode to spectator
+		set player's game mode to spectator
+		set player's game mode to spectator
+		send title "&c⚠&eVous êtes Mort&c⚠" with subtitle "&dPatientez &b%{tempsmort::%player%}%&es" to player
+		hide the player from all players
+		stop
+
+		

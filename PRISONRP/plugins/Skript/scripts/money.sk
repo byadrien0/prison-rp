@@ -1,0 +1,52 @@
+#--------------------------------------------------------------#
+#                          ~ Money ~                           #
+#--------------------------------------------------------------#
+
+
+command /clearallmoney:
+	trigger:
+		if player is op:
+			clear {money::*}
+			broadcast "&4&l>> &cINFO &4&l<< &6- &e%player% à remit l'argent propre de tout les comptes à &b&l0 &e! "
+			stop
+
+command /money:
+	trigger:
+		send "&f &ePrisonRP &f &e- &cTu possèdes &e%{money::%player%}%&b€ &csur ton compte bancaire."
+		stop			
+		
+command /balance:
+	trigger:
+		send "&f &ePrisonRP &f &e- &cTu possèdes &e%{money::%player%}%&b€ &csur ton compte bancaire."
+		stop	
+
+command /eco [<text>] [<player>] [<number>]:
+	trigger:
+		if player is {dev::%player%}:
+			if arg 1 is not set:
+				message "&cCorrecte usage: /eco <give/remove> <joueur> <nombre>" to player
+				stop
+			if arg 1 is "give" or "add":
+				if arg 2 is not set:
+					message "&cCorrecte usage: /eco <give> <joueur> <nombre>" to player
+					stop
+				else if arg 3 is not set:
+					message "&cCorrecte usage: /eco <give> <joueur> <nombre>" to player
+					stop
+				else:
+					add arg 3 to {money::%arg 2%}
+					stop
+			if arg 1 is "delete" or "take":
+				if arg 2 is not set:
+					message "&cCorrecte usage: /eco <remove> <joueur> <nombre>" to player
+					stop
+				else if arg 3 is not set:
+					message "&cCorrecte usage: /eco <remove> <joueur> <nombre>" to player
+					stop
+				else:
+					if {money::%arg 2%} > arg 3:
+						remove arg 3 from {money::%arg 2%}
+						stop
+					else:
+						send "&c%arg-2% n'a pas assez d'argent !"
+						stop
