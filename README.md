@@ -12,7 +12,7 @@
 Bienvenue sur le **serveur Minecraft Prison RP**, une carte unique, pensée pour une immersion totale dans le monde carcéral et urbain ! 🏙️
 🔨 Développé avec soin pour un gameplay dynamique, un lore profond et des mécaniques RP solides.
 
-📂 Chaque section présentée est accompagnée de **captures d'écran** pour illustrer l’univers ! *(screens disponibles dans le dépôt ou dans le dossier `/screens`)*
+📂 Chaque section présentée est accompagnée de **captures d'écran** pour illustrer l’univers !
 
 ---
 
@@ -23,6 +23,11 @@ Bienvenue sur le **serveur Minecraft Prison RP**, une carte unique, pensée pour
 * Vue aérienne de la prison entourée de ses **murs fortifiés** et son **pont montagneux**.
 * Cour intérieure avec **zones de travail**, **miradors**, **cellules sécurisées** (accessibles avec carte).
 * Sanitaires 🚿, **douches**, **toilettes**, et **vestiaires**.
+
+* ![image](https://github.com/user-attachments/assets/5d6149ee-deb6-4151-b6b3-c79ce6ca8601) *
+* ![image](https://github.com/user-attachments/assets/0efd1c44-7829-4f1d-9dd0-c126a43cd1dc) *
+* ![image](https://github.com/user-attachments/assets/eb84fd9f-088f-461c-b23a-be16feba8290) *
+
 
 ### 🛠️ Intérieur
 
