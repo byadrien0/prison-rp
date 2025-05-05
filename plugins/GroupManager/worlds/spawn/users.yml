@@ -1,0 +1,16 @@
+users:
+  ElgarL:
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  KHobbits:
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  snowleo:
+    group: prisonnier
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms

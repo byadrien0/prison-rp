@@ -1,0 +1,62 @@
+command /help <text> <text>:
+    Usage: &a&l>> &cErreur &a&l<< &e- &6/help <joueur/staff/dev> <page>
+    trigger:
+        if arg 1 is "joueur":
+            if arg-2 is "1":
+                send "&aCommandes des Joueurs: &f| &bPage 1/1"
+                send "  &4&l* &e/coins &f(pour voir vos RP coins)"
+                send "  &4&l* &e/money &f(pour voir votre argent)"
+                send "  &4&l* &e/moneytop &f(pour voir les 3 joueurs possèdant le plus d'argent)"
+                send "  &4&l* &e/action &f(pour voir la liste des actions controlées par des Skripts)"	
+                send "  &4&l* &e/rip &f(pour vous suicidez / delaie de 10 minutes entre utilisation)"	
+                send "  &4&l* &e/boutique &f(pour voir la boutique)"
+                send "  &4&l* &e/helpop <votre message> &f(pour signaler un problème au Staff)"
+                send "  &4&l* &e/rp <votre texte> &f(pour parler sans avoir de micro)"
+                stop
+
+        if player is {dev::%player%}:
+            if arg 1 is "developpeur" or "dev" or "d":
+                if arg-2 is empty:
+                    send "&aCommandes des Developpeurs: &f| &bPage 1/2"
+                    send "  &4&l* &e/developpeur &f(pour vous mettre à build sur la map du PrisonRP)"
+                    send "  &4&l* &e/coinsadd <montant> <joueur> &f(pour donner des RPCoins à un joueur)"
+                    send "  &4&l* &e/coinsremove <montant> <joueur> &f(pour retirer des RPCoins à un joueur)"
+                    send "  &4&l* &e/clearallmoney &f(pour réinstaller l'argent propre de tout les joueurs)"
+                    send "  &4&l* &e/srvname <nom de votre serveur> &f(pour set le nom de votre serveur)"
+                    send "  &4&l* &e/srvdiscord <numéro de votre discord> &f(pour set le nom de votre discord)"
+                    send "  &4&l* &e/srvboutique <url de votre boutique> &f(pour set le nom de votre boutique)"
+                    stop
+                if arg-2 is "2":
+                    send "&aCommandes des Developpeurs: &f| &bPage 2/2"
+                    send "  &4* &e/eco give <joueur> <montant> &f(pour ajouter de l'argent propre à un joueur)"
+                    send "  &4* &e/eco delete <joueur> <montant> &f(pour retirer de l'argent propre à un joueur)"
+                    send "  &4* &d&l[DANGEREUX] &e/debug &f(remet le compteur des métiers à zéro et remet à zéro le couvrefeu)"
+                    stop
+
+        if player is {staffs::%player%}:
+            if arg 1 is "staff" or "s":
+                if arg-2 is empty:
+                    send "&aCommandes des Staffs: &f| &bPage 1/3"
+                    send "  &6* &e/staff &f(pour se mettre en mode staff)"
+                    send "  &6* &e/cleardirecteur &f(pour retirer le directeur de la prison)"
+                    send "  &6* &e/cleargarde &f(pour retirer le chef des gardes de la prison)"
+                    send "  &6* &e/clearcouvrefeu &f(pour retirer le couvrefeu de la prison)"
+                    send "  &6* &e/invsee <joueur> &f(pour voir l'inventaire d'un joueur)"	
+                    stop
+
+                if arg-2 is "2":
+                    send "&aCommandes des Staffs: &f| &bPage 2/3"
+                    send "  &6* &e/clearparcelle <1-10> &f(pour réinstaller une des 10 parcelles)"
+                    send "  &6* &e/clearchat ou /cc &f(pour nettoyer le chat)"
+                    send "  &6* &e/freeze <player> &f(pour freeze un joueur par le chat)"
+                    send "  &6* &e/clearrip &f(Réinitialiser le temps de suicide des joueurs sur l'instant)"
+                    send "  &6* &e/annonce <text> &f(Faire une annonce dans chat visible par tous)"
+                    stop
+
+                if arg-2 is "3":
+                    send "&aCommandes des Staffs: &f| &bPage 3/3"
+                    send "  &4&l* &e/clearallfreeze &f(pour retirer tous les joueurs freezes)"
+                    send "  &4&l* &e/clearprime <normal/medium/extrême> &f(pour supprimer une prime sur le directeur)"
+                    stop
+
+

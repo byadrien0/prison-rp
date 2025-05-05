@@ -1,0 +1,303 @@
+
+#--------------------------------------------------------------#
+#                   ~ Menu Métiers Normal ~                    #
+#--------------------------------------------------------------#
+
+command /§PrisonRP: 
+	trigger:
+		if player is in world "lobby":  
+			if player is {lobby::%player%}:
+				if {boutique} or {discord} or {serveur} isn't set:
+					send "   " to all players
+					send "&4&l>> &cInfo &4&l<< &e- &cMerci de terminer la configuration du serveur pour pouvoir jouer." to all players
+					send "   " to all players
+					send "&4&l>> &cInfo &4&l<< &e- &cMettez-vous en tant que opérateur sur le serveur (/op <pseudo>) et ensuite faites /developpeur" to all players
+					send "   " to all players
+					stop  
+				else:
+					wait 3 tick
+					open chest inventory with 3 rows named "   " to player
+					make a gui slot 0 of player with Red Stained Glass Pane named "&4Quitter" to close
+					make a gui slot 1 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 2 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 3 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 4 of player with Red Stained Glass Pane named "&4Quitter" to close
+					make a gui slot 5 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 6 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 7 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 8 of player with Red Stained Glass Pane named "&4Quitter" to close
+					make a gui slot 9 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 10 of player with White Stained Glass Pane named "&cPrisonRP" to close 
+					make a gui slot 11 of player with Iron Ingot named "&a&lMétier Gratuit" with lore "   " and "&eMétier Disponible:" and "&a%{jobs.gratuit.etat.dispo}%" and "   " and "&cMétier Indisponible:" and "&9%{jobs.gratuit.etat.indispo}%" and "   " to run: 
+						wait 3 tick
+						open chest inventory with 3 rows named "" to player
+						make a gui slot 0 of player with Red Stained Glass Pane named "&4Quitter" to close
+						make a gui slot 1 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 2 of player with White Stained Glass Pane named "&cPrisonRP" to close						
+						make a gui slot 3 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 4 of player with Red Stained Glass Pane named "&4Quitter" to close
+						make a gui slot 5 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 6 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+						make a gui slot 7 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 8 of player with Red Stained Glass Pane named "&4Quitter" to close
+						make a gui slot 9 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 10 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						if {jobs.prisonnier.etat} isn't "false":
+							make a gui slot 11 of player with player's skull named "&8Prisonnier" with lore "  " and "&a> &fPaye Normal: &90&b&b €" and " " and "&a> &fPaye VIP: &93.500&b&b €" and "  " and "&a> &fPrix: &90&b&b €" and " " and "&6&l>> &e&lDisponible" and "  " to run:
+								if player is in world "lobby": 	
+									add 1 to {PrisonRP.visit.draxy}
+									clear {lobby::%player%}						
+									set {prisonrp::%player%} to player
+									set max health of player to 14		
+									heal player				
+									clear player's inventory							
+									set {prisonnier::%player%} to player
+									add 1 to {prisonnier.nb}
+									send "&e&l>> &aVous commencez une nouvelle vie rp !"
+									send "&e&l>> &c0€ &cVous ont été rétiré !"
+									if player is {normal::%player%}:													
+										teleport player to location(-1282, 8, 1248, world("world"), 0, 0)
+										stop						
+									if player is {vip::%player%}:
+										teleport player to location(-1282, 8, 1248, world("world"), 0, 0)	
+										stop	
+						else:
+							make a gui slot 11 of player with player's skull named "&8Prisonnier" with lore "  " and "&a> &fPaye Normal: &90&b&b €" and " " and "&a> &fPaye VIP: &93.500&b&b €" and "  " and "&a> &fPrix: &90&b&b €" and " " and "&6&l>> &c&lIndisponible" and "  " to run:
+								send "   " to player
+								send "&4&l>> &cErreur &4&l<< &e- &cLe métier de Prisonnier a été désactivé." to player
+								send "   " to player
+								stop
+						make a gui slot 12 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+						if {jobs.garde.etat} isn't "false":
+							make a gui slot 13 of player with player's skull named "&3Garde" with lore "  " and "&a> &fPaye Normal: &93.900&b&b €" and " " and "&a> &fPaye VIP: &97.800&b&b €" and "  " and "&a> &fPrix: &92500&b&b €" and " " and "&6&l>> &e&lDisponible" and "  " to run:
+								if player is in world "lobby": 
+									if {money::%player%} is less than 2500:
+										send "&e&l>> &cDésolé, mais tu n'as pas assez d'argent ! (2.500€)"
+										stop
+									else: 
+										add 1 to {PrisonRP.visit.draxy}
+										clear {lobby::%player%}									
+										set {prisonrp::%player%} to player
+										set max health of player to 16
+										heal player						
+										add 1 to {garde.nb}
+										set {garde::%player%} to player
+										clear player's inventory
+										make console execute command "/give %player% cgm:handgun 1"
+										make console execute command "/give %player% cgm:basic_ammo 50"		
+										make console execute command "/give %player% securitycraft:keycard_lv1 1"
+										give 1 Lead named "&c&lMenotte" to player									
+										give 1 stick named "&c&lBâton_de_Fouille" to player 
+										remove 2500 from {money::%player%}
+										send "&e&l>> &aVous commencez une nouvelle vie rp !"
+										send "&e&l>> &c2500€ &cVous ont été rétiré !"
+										if player is {normal::%player%}:
+											teleport player to location(-1284, 12, 1276, world("world"), 0, 0)	
+											stop									
+										if player is {vip::%player%}:
+											teleport player to location(-1284, 12, 1276, world("world"), 0, 0)
+											stop				
+						else:
+							make a gui slot 13 of player with player's skull named "&3Garde" with lore "  " and "&a> &fPaye Normal: &93.900&b&b €" and " " and "&a> &fPaye VIP: &97.800&b&b €" and "  " and "&a> &fPrix: &92500&b&b €" and " " and "&6&l>> &c&lIndisponible" and "  " to run:
+								send "   " to player
+								send "&4&l>> &cErreur &4&l<< &e- &cLe métier de Garde a été désactivé." to player
+								send "   " to player
+								stop
+
+						make a gui slot 14 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						if {jobs.directeur.etat} isn't "false":
+							make a gui slot 15 of player with player's skull named "&6Directeur" with lore "  " and "&a> &fPaye Normal: &93.500&b&b €" and " " and "&a> &fPaye VIP: &97.000&b&b €" and "  " and "&a> &fPrix: &96000&b&b €" and " " and "&6&l>> &e&lDisponible" and "  " to run: 
+								if player is in world "lobby": 
+									if {directeur} is not set:
+										if {money::%player%} is less than 6000:
+											send "&e&l>> &cDésolé, mais tu n'as pas assez d'argent ! (6.000€)"
+											stop
+										else: 
+											add 1 to {PrisonRP.visit.draxy}
+											clear {lobby::%player%}										
+											set {prisonrp::%player%} to player
+											remove 6000 from {money::%player%}
+											send "&e&l>> &e6000€ &cVous ont été rétiré !"
+											set {directeur} to player
+											clear player's inventory
+											make console execute command "/give %player% cgm:machine_pistol 1"	 
+											make console execute command "/give %player% cgm:basic_ammo 50"	
+											make console execute command "/give %player% securitycraft:keycard_lv1 1"
+											give 1 paper named "&c&lPanel_de_Gestion" to player 
+											give 1 stick named "&c&lBâton_de_Fouille" to player 
+											heal player
+											add 1 to {directeur.nb}
+											set max health of player to 25
+											heal player														
+											broadcast "&e&l>> &e&o%player% &r&aest devenu le nouveau Directeur de la Prison !"
+											send "&e&l>> &aVous commencez une nouvelle vie rp !"
+											if player is {normal::%player%}:
+												teleport player to location(-1256.446, 12, 1303, world("world"), 91, 0.6)
+												stop										
+											if player is {vip::%player%}:
+												teleport player to location(-1256.446, 12, 1303, world("world"), 91, 0.6)
+												stop						
+									else:
+										send "&e&l>> &aIl y a déjà un directeur dans la Prison !"	
+										stop		
+						else:
+							make a gui slot 15 of player with player's skull named "&6Directeur" with lore "  " and "&a> &fPaye Normal: &93.500&b&b €" and " " and "&a> &fPaye VIP: &97.000&b&b €" and "  " and "&a> &fPrix: &96000&b&b €" and " " and "&6&l>> &c&lIndisponible" and "  " to run: 
+								send "   " to player
+								send "&4&l>> &cErreur &4&l<< &e- &cLe métier de Directeur a été désactivé." to player
+								send "   " to player
+								stop
+
+						make a gui slot 16 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 17 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 18 of player with Red Stained Glass Pane named "&4Quitter" to close
+						make a gui slot 19 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 20 of player with White Stained Glass Pane named "&cPrisonRP" to close				
+						make a gui slot 21 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 22 of player with Red Stained Glass Pane named "&4Quitter" to close
+						make a gui slot 23 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+						make a gui slot 24 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+						make a gui slot 25 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 26 of player with Red Stained Glass Pane named "&4Quitter" to close	
+						stop	
+					make a gui slot 12 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 13 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 14 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 15 of player with Gold Ingot named "&c&lMétier VIP" with lore "  " and "&eMétier Disponible:" and "&a%{jobs.vip.etat.dispo}%" and "   " and "&cMétier Indisponible:" and "&9%{jobs.vip.etat.indispo}%" to run:
+						wait 3 tick
+						open chest inventory with 3 rows named "" to player
+						make a gui slot 0 of player with Red Stained Glass Pane named "&4Quitter" to close
+						make a gui slot 1 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 2 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 3 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 4 of player with Red Stained Glass Pane named "&4Quitter" to close
+						make a gui slot 5 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 6 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 7 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 8 of player with Red Stained Glass Pane named "&4Quitter" to close
+						make a gui slot 9 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 10 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						if {jobs.chefgarde.etat} isn't "false":
+							make a gui slot 11 of player with player's skull named "&8*&9&lVIP&8*&3&lChef Garde" with lore "  " and "&a> &fPaye VIP: &98.000&b&b €" and "  " and "&a> &fPrix: &92500&b&b €" and " " and "&6&l>> &e&lDisponible" and "  " to run: 
+								if player is in world "lobby": 
+									if {money::%player%} is less than 2500:
+										send "&e&l>> &cDésolé, mais tu n'as pas assez d'argent ! (2.500€)"
+										stop
+									else:
+										if {chefgarde} is not set:
+											if player is {normal::%player%}:
+												send "&e&l>> &cTu n'es pas VIP !" to player
+												stop
+											else if player is {vip::%player%}:
+												add 1 to {PrisonRP.visit.draxy}
+												clear {lobby::%player%}											
+												set {prisonrp::%player%} to player
+												remove 2500 from {money::%player%}
+												make console execute command "/give %player% cgm:machine_pistol 1"	 
+												make console execute command "/give %player% cgm:basic_ammo 50"
+												make console execute command "/give %player% securitycraft:keycard_lv1 1"
+												give 1 Lead named "&c&lMenotte" to player
+												give 1 stick named "&c&lBâton_de_Fouille" to player 
+												send "&e&l>> &aVous commencez une nouvelle vie rp !"
+												add 1 to {chefgarde.nb}
+												set max health of player to 23
+												set {chefgarde} to player
+												heal player		
+												teleport player to location(-1284, 12, 1276, world("world"), 0, 0)	
+												send "&e&l>> &e2500€ &cVous ont été rétiré !"
+												broadcast "&e&l>> &e&o%player% &r&aest devenu le nouveau Chef des gardes!"									
+										else:
+											send "&e&l>> &cIl y a déjà une personne en chef des gardes"
+											stop								
+						else:
+							make a gui slot 11 of player with player's skull named "&8*&9&lVIP&8*&3&lChef Garde" with lore "  " and "&a> &fPaye VIP: &98.000&b&b €" and "  " and "&a> &fPrix: &92500&b&b €" and " " and "&6&l>> &c&lIndisponible" and "  " to run: 
+								send "   " to player
+								send "&4&l>> &cErreur &4&l<< &e- &cLe métier de ChefGarde a été désactivé." to player
+								send "   " to player
+								stop
+
+						make a gui slot 12 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 13 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 14 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						if {jobs.bri.etat} isn't "false":
+							make a gui slot 15 of player with player's skull named "&8*&9&lVIP &8*&6&lB&e.&6&lR&e.&6&lI" with lore "  " and "&a> &fPaye VIP: &910.000&b&b €" and "  " and "&a> &fPrix: &93500&b&b €" and " " and "&6&l>> &e&lDisponible" and "  " to run: 
+								if player is in world "lobby": 
+									if {money::%player%} is less than 3500:
+										send "&e&l>> &cDésolé, mais tu n'as pas assez d'argent ! (3.500€)"
+										stop
+									else: 
+										if player is {normal::%player%}:
+											send "&e&l>> &cTu n'es pas VIP !" to player
+											stop
+										else if player is {vip::%player%}:	
+											add 1 to {PrisonRP.visit.draxy}
+											clear {lobby::%player%}										
+											set {prisonrp::%player%} to player	
+											teleport player to location(-1277, 12, 1299, world("world"), 0, 0)
+											remove 3500 from {money::%player%}
+											clear player's inventory
+											make console execute command "/give %player% cgm:shotgun"
+											make console execute command "/give %player% cgm:shell 50"					
+											make console execute command "/give %player% cgm:machine_pistol 1"	 
+											make console execute command "/give %player% cgm:basic_ammo 50"
+											make console execute command "/give %player% securitycraft:keycard_lv1 1"
+											give 1 stick named "&c&lBâton_de_Fouille" to player 
+											set {bri::%player%} to player
+											add 1 to {bri.nb}
+											set max health of player to 22
+											heal player					
+											send "&e&l>> &aVous commencez une nouvelle vie rp !"
+											send "&e&l>> &c3500€ &cVous ont été rétiré !"			
+						else:
+							make a gui slot 15 of player with player's skull named "&8*&9&lVIP&e&l+ &8*&6&lB&e.&6&lR&e.&6&lI" with lore "" and "&cPrix:" and "&93500&b €" and "  " and "&6&l>> &c&lIndisponible" and "  " to run: 
+								send "   " to player
+								send "&4&l>> &cErreur &4&l<< &e- &cLe métier de B.R.I a été désactivé." to player
+								send "   " to player
+								stop
+
+
+						make a gui slot 16 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 17 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 18 of player with Red Stained Glass Pane named "&4Quitter" to close
+						make a gui slot 19 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 20 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 21 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 22 of player with Red Stained Glass Pane named "&4Quitter" to close
+						make a gui slot 23 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 24 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 25 of player with White Stained Glass Pane named "&cPrisonRP" to close
+						make a gui slot 26 of player with Red Stained Glass Pane named "&4Quitter" to close			
+						stop
+					make a gui slot 16 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 17 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 18 of player with Red Stained Glass Pane named "&4Quitter" to close
+					make a gui slot 19 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 20 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 21 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 22 of player with Red Stained Glass Pane named "&4Quitter" to close
+					make a gui slot 23 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 24 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 25 of player with White Stained Glass Pane named "&cPrisonRP" to close
+					make a gui slot 26 of player with Red Stained Glass Pane named "&4Quitter" to close	
+					stop
+			else:
+				send "&e&l>> &cUn joueur en RP ne peut pas executer cette commande !" to player
+				stop
+			
+#--------------------------------------------------------------#
+#                    ~ Clear Job ~                             #
+#--------------------------------------------------------------#
+
+command /cleargarde:
+	permission: admin.clear
+	trigger:
+		broadcast "&e&l>> &cLe chef des gardes est mort."
+		clear {chefgarde}
+		stop
+
+command /cleardirecteur:
+	permission: admin.clear
+	trigger:
+		broadcast "&e&l>> &cLe Directeur de la Prison est mort."
+		clear {directeur}
+		stop
+

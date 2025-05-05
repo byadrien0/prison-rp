@@ -1,0 +1,46 @@
+
+command /reportmessage [<offline player>] [<text>]:
+    trigger:
+        if sender is arg 1:
+            send "&cErreur &f» &cVous ne pouvez pas vous signaler vous-même."
+            stop
+        loop all players:
+            if loop-player is {dev::%loop-player%} or {staff.service::%loop-player%} or {staffs::%loop-player%}:
+                send "&8&l&m-------------------------" to loop-player
+                Send " " to loop-player
+                send "&7Un &csignalement &7vient d'être &cenregistré&7." to loop-player
+                send " " to loop-player
+                send "&7Requête &f» &5%sender%&7." to loop-player
+                send "&7Accusé(e) &f» &d%arg-1%&7" to loop-player
+                send "&7Circonstances &f» &5%arg-2%&7." to loop-player
+                send " "
+                send "&8&l&m-------------------------" to loop-player
+                
+				
+
+on load:
+	set {cdchat} to 3 seconds
+	stop
+
+on chat:
+	cancel event	
+	set {_cd} to difference between {lastchat.%player%} and now
+	if {_cd} < {cdchat}:
+		send action bar "&6[PrisonRPChat] Attends un peu avant de parler !" to player
+		stop
+	set {lastchat.%player%} to now
+	if player is {staffs::%player%} or op:
+		make console execute command "tellraw @a [{""text"":""&c⚠"",""clickEvent"":{""action"":""run_command"",""value"":""/reportmessage %player% %message%""},""hoverEvent"":{""action"":""show_text"",""value"":""&cSignaler ce message""}},{""text"":"" &7&l[&4S&7&l]&6%display name of player% &f» &7%message%""}]"
+		stop
+	if player is {staff.service::%player%}:
+		make console execute command "tellraw @a [{""text"":""&c⚠"",""clickEvent"":{""action"":""run_command"",""value"":""/reportmessage %player% %message%""},""hoverEvent"":{""action"":""show_text"",""value"":""&cSignaler ce message""}},{""text"":"" &7&l[&cS&7&l]&6%display name of player% &f» &7%message%""}]"
+		stop		
+	if player is {vip::%player%}:
+		make console execute command "tellraw @a [{""text"":""&c⚠"",""clickEvent"":{""action"":""run_command"",""value"":""/reportmessage %player% %message%""},""hoverEvent"":{""action"":""show_text"",""value"":""&cSignaler ce message""}},{""text"":"" &7&l[&dV&7&l]&6%display name of player% &f» &7%message%""}]"
+		stop				
+	if player is {normal::%player%}:
+		make console execute command "tellraw @a [{""text"":""&c⚠"",""clickEvent"":{""action"":""run_command"",""value"":""/reportmessage %player% %message%""},""hoverEvent"":{""action"":""show_text"",""value"":""&cSignaler ce message""}},{""text"":"" &7&l[&8N&7&l]&6%display name of player% &f» &7%message%""}]"
+		stop
+	stop
+	
+	

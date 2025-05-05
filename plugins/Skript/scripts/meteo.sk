@@ -1,0 +1,8 @@
+on weather change:
+    if weather is rainy:
+        set weather to clear
+
+on weather change:
+    if weather is thunder:
+        set weather to clear
+

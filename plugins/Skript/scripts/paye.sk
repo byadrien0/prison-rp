@@ -1,0 +1,37 @@
+#--------------------------------------------------------------#
+#                          ~ Paye ~                            #
+#--------------------------------------------------------------#
+
+at 6:30 am in world "world":
+	loop all players:
+		if loop-players is {normal::%loop-players%}:
+			if loop-players is {garde::%loop-players%}:
+				add 3900 to {money::%{garde::%loop-players%}%}
+				send "&e>> &cInfo &e<< &dVous venez de recevoir votre paye de &a3 900 &e€&d" to {garde::%loop-players%}
+				stop
+			if loop-players is {directeur}:
+				add 3500 to {money::%{directeur}%}
+				send "&e>> &cInfo &e<< &dVous venez de recevoir votre paye de &a3 500 &e€&d" to {directeur}
+				stop
+		if loop-players is {vip::%loop-players%}:
+			if loop-players is {garde::%loop-players%}:
+				add 7800 to {money::%{garde::%loop-players%}%}
+				send "&e>> &cInfo &e<< &dVous venez de recevoir votre paye de &a7 800 &e€&d" to {garde::%loop-players%}
+				stop
+			if loop-players is {directeur::%loop-players%}:
+				add 7000 to {money::%{directeur::%loop-players%}%}
+				send "&e>> &cInfo &e<< &dVous venez de recevoir votre paye de &a7 000 &e€&d" to {directeur::%loop-players%}
+				stop
+			if loop-players is {chefgarde}:
+				add 8000 to {money::%{chefgarde}%}
+				send "&e>> &cInfo &e<< &dVous venez de recevoir votre paye de &a8 000 &e€&d" to {chefgarde}
+				stop
+			if loop-players is {prisonnier::%loop-players%}:
+				add 3500 to {money::%{prisonnier::%loop-players%}%}
+				send "&e>> &cInfo &e<< &dVous venez de recevoir votre paye de &a3 500 &e€&d" to {prisonnier::%loop-players%}
+				stop
+			if loop-players is {BRI::%loop-players%}:
+				add 10000 to {money::%{BRI::%loop-players%}%}
+				send "&e>> &cInfo &e<< &dVous venez de recevoir votre paye de &a10 000 &e€&d" to {BRI::%loop-players%}
+				stop
+

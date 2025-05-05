@@ -1,0 +1,42 @@
+on load:
+	clear {cooldownRIP::*}
+	stop
+	
+command /clearrip:
+	trigger:
+		if player is {dev::%player%} or {staff.service::%player%}:
+			clear {cooldownRIP::*}
+			stop
+	
+command /rip:
+	trigger:
+		if player is in world "world": 
+			if player is {lobby::%player%}:
+				send "&e&l>> &cUn joueur au lobby ne peut pas executer cette commande !" to player
+				stop			
+			if player is {mort::%player%}:
+				send "&e&l>> &cTu ne peux pas réaliser cette commande car tu es mort !" to player
+				stop
+			if player is {normal::%player%}:
+				if {cooldownRIP::%player%} is not set:
+					kill the player
+					set {cooldownRIP::%player%} to player
+					wait 10 minute
+					clear {cooldownRIP::%player%}
+					stop
+				else:
+					send "&e&l>> &cVeuillez patienter 10m avant de réessayer !"
+					stop					
+			if player is {vip::%player%}:
+				if {cooldownRIP::%player%} is not set:
+					kill the player
+					set {cooldownRIP::%player%} to player
+					wait 2 minute
+					clear {cooldownRIP::%player%}
+					stop
+				else:
+					send "&e&l>> &cVeuillez patienter 2m avant de réessayer !"
+					stop			
+
+
+						

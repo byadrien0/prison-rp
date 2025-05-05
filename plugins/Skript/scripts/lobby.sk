@@ -1,0 +1,326 @@
+
+#--------------------------------------------------------------#
+#               ~ Desactiver les dégats au lobby ~             #
+#--------------------------------------------------------------#
+
+On damage:
+	if victim is in world "lobby":
+		cancel event
+		stop
+
+on death of player:
+	clear dropped items
+	stop
+
+on explode:
+	cancel event
+	stop
+
+on drop:
+	if player is {lobby::%player%}:
+		cancel event
+		stop
+
+on first join:
+	if {statut.maintenance} is "true":
+		if player is {staffs::%player%} or op:
+			teleport player to location(-4.46, 67, 29.42, world("lobby"), 0, 3)
+			set {money::%player%} to 0
+			set {printer.level.1::%player%} to 0
+			set {printer.level.2::%player%} to 0
+			set {printer.level.3::%player%} to 0
+			set {add::%player%} to 0
+			set {printer.level.4::%player%} to 0
+			set {printer.level.5::%player%} to 0
+			set {coins::%player%} to 0
+			set {normal::%player%} to player
+			set {lobby::%player%} to player
+			teleport player to location(-4.46, 67, 29.42, world("lobby"), 0, 3)
+			wait 3 seconds
+			teleport player to location(-4.46, 67, 29.42, world("lobby"), 0, 3)
+			message "        "
+			message "                &6&lBienvenue sur %{serveur}% RP !"
+			message "        "		
+			message "                                 &e&lLiens"
+			message "                         &dBoutique&7, &9Discord"
+			message "        "
+			message "        "			
+			message "&a&lINFORMATIONS!"
+			message "   &eRetrouvez toutes les informations"
+			message "   &esur les dernières mises à jour de %{serveur}% RP"
+			message "   &een suivant notre Discord ou notre boutique"
+			message "&b-> &b&ldiscord.gg/%{discord}% &f/ &b-> &b&l%{boutique}%"
+			message "        "	
+			stop
+		else:
+			kick player due to "&4&l>> &cInfo &4&l<< &e- &cServeur actuellement en maintenance."
+			stop
+	else:
+		teleport player to location(-4.46, 67, 29.42, world("lobby"), 0, 3)
+		set {money::%player%} to 0
+		set {printer.level.1::%player%} to 0
+		set {printer.level.2::%player%} to 0
+		set {printer.level.3::%player%} to 0
+		set {add::%player%} to 0
+		set {printer.level.4::%player%} to 0
+		set {printer.level.5::%player%} to 0
+		set {coins::%player%} to 0
+		set {normal::%player%} to player
+		set {lobby::%player%} to player
+		teleport player to location(-4.46, 67, 29.42, world("lobby"), 0, 3)
+		wait 3 seconds
+		teleport player to location(-4.46, 67, 29.42, world("lobby"), 0, 3)
+		message "        "
+		message "                &6&lBienvenue sur %{serveur}% RP !"
+		message "        "		
+		message "                                 &e&lLiens"
+		message "                         &dBoutique&7, &9Discord"
+		message "        "
+		message "        "			
+		message "&a&lINFORMATIONS!"
+		message "   &eRetrouvez toutes les informations"
+		message "   &esur les dernières mises à jour de %{serveur}% RP"
+		message "   &een suivant notre Discord ou notre boutique"
+		message "&b-> &b&ldiscord.gg/%{discord}% &f/ &b-> &b&l%{boutique}%"
+		message "        "	
+		stop
+	
+
+
+on damage of player:
+	if victim is {lobby::%victim%}:
+		cancel event
+		stop
+	
+command /lobby:
+	trigger:
+		if player is in world "world": 
+			stop
+		if player is in world "lobby":  
+			clear player's inventory
+			set {lobby::%player%} to player
+			teleport player to location(-4.46, 67, 29.42, world("lobby"), 0, 3)
+			set current hotbar slot of player to 0
+			if player is {staffs::%player%} or op:
+				set slot 0 of player to Diamond Axe named "&dMode Staff &7(Clique droit)"
+			set slot 3 of player to Clock named "&aMenu des Jeux %{serveur}% RP &7(Clique droit)"
+			set slot 5 of player to gold ingot of sharpness 1 named "&eBoutique &7(Clique droit)"
+			if player is op:
+				set slot 8 of player to Emerald named "&6Mode développeur &7(Clique droit)"
+			stop			
+
+
+
+
+on join:
+	if {statut.maintenance} is "true":
+		if player is {staffs::%player%} or op:
+			if player is {lobby::%player%}: 
+				send title "&e! &a&l%{serveur}% RP &e!" with subtitle "&6PrisonRP &eet bien d'autres" to player
+				clear player's inventory
+				set current hotbar slot of player to 0
+				if player is {staffs::%player%} or op:
+					set slot 0 of player to Diamond Axe named "&dMode Staff &7(Clique droit)"
+				set slot 3 of player to Clock named "&aMenu des Jeux %{serveur}% RP &7(Clique droit)"
+				set slot 5 of player to gold ingot of sharpness 1 named "&eBoutique &7(Clique droit)"
+				if player is op:
+					set slot 8 of player to Emerald named "&6Mode développeur &7(Clique droit)"
+				teleport player to location(-4.46, 67, 29.42, world("lobby"), 0, 3)		
+				message "        "
+				message "        "
+				message "        "
+				message "        "
+				message "        "
+				message "        "
+				message "        "
+				message "        "
+				message "        "
+				message "        "
+				message "        "
+				message "        "
+				message "        "
+				message "        "
+				message "        "	
+				wait 1 seconds	
+				message "        "
+				message "                &6&lBienvenue sur %{serveur}% RP !"
+				message "        "		
+				message "                                 &e&lLiens"
+				message "                         &dBoutique&7, &9Discord"
+				message "        "
+				message "        "			
+				message "&a&lINFORMATIONS!"
+				message "   &eRetrouvez toutes les informations"
+				message "   &esur les dernières mises à jour de %{serveur}% RP"
+				message "   &een suivant notre Discord ou notre boutique"
+				message "&b-> &b&ldiscord.gg/%{discord}% &f/ &b-> &b&l%{boutique}%"
+				message "        "	
+				stop
+		else:
+			kick player due to "&4&l>> &cInfo &4&l<< &e- &cServeur actuellement en maintenance."
+			stop
+	else:
+		if player is {lobby::%player%}: 
+			send title "&e! &a&l%{serveur}% RP &e!" with subtitle "&6PrisonRP &eet bien d'autres" to player
+			clear player's inventory
+			set current hotbar slot of player to 0
+			if player is {staffs::%player%} or op:
+				set slot 0 of player to Diamond Axe named "&dMode Staff &7(Clique droit)"
+			set slot 3 of player to Clock named "&aMenu des Jeux %{serveur}% RP &7(Clique droit)"
+			set slot 5 of player to gold ingot of sharpness 1 named "&eBoutique &7(Clique droit)"
+			if player is op:
+				set slot 8 of player to Emerald named "&6Mode développeur &7(Clique droit)"
+			teleport player to location(-4.46, 67, 29.42, world("lobby"), 0, 3)		
+			message "        "
+			message "        "
+			message "        "
+			message "        "
+			message "        "
+			message "        "
+			message "        "
+			message "        "
+			message "        "
+			message "        "
+			message "        "
+			message "        "
+			message "        "
+			message "        "
+			message "        "	
+			wait 5 seconds	
+			message "        "
+			message "                &6&lBienvenue sur %{serveur}% RP !"
+			message "        "		
+			message "                                 &e&lLiens"
+			message "                         &dBoutique&7, &9Discord"
+			message "        "
+			message "        "			
+			message "&a&lINFORMATIONS!"
+			message "   &eRetrouvez toutes les informations"
+			message "   &esur les dernières mises à jour de %{serveur}% RP"
+			message "   &een suivant notre Discord ou notre boutique"
+			message "&b-> &b&ldiscord.gg/%{discord}% &f/ &b-> &b&l%{boutique}%"
+			message "        "	
+			stop
+
+
+on inventory click:
+	if player is {lobby::%player%}:  
+		cancel event
+		stop
+			
+
+on join:
+	set join message to "&7&l[ &a+ &7&l] %player%"
+	stop
+	
+on quit:
+	set quit message to "&7&l[ &4- &7&l] %player%"
+	stop
+
+
+on rightclick with gold ingot:
+	if {boutique} or {discord} or {serveur} isn't set:
+		send "   " to all players
+		send "&4&l>> &cInfo &4&l<< &e- &cMerci de terminer la configuration du serveur pour pouvoir jouer." to all players
+		send "   " to all players
+		send "&4&l>> &cInfo &4&l<< &e- &cMettez-vous en tant que opérateur sur le serveur (/op <pseudo>) et ensuite faites /developpeur" to all players
+		send "   " to all players
+		stop  
+	else:
+		if player is {lobby::%player%}:    
+			make player execute command "/boutique"
+			stop
+
+on rightclick with Emerald:
+	if player is {lobby::%player%}:  
+		cancel event
+		if {boutique} or {discord} or {serveur} isn't set:
+			send "   " to all players
+			send "&4&l>> &cInfo &4&l<< &e- &cMerci de terminer la configuration du serveur pour pouvoir jouer." to all players
+			send "   " to all players
+			send "&4&l>> &cInfo &4&l<< &e- &cMettez-vous en tant que opérateur sur le serveur (/op <pseudo>) et ensuite faites /developpeur" to all players
+			send "   " to all players
+			stop  
+		else:
+			make player execute command "/developpeur"
+			stop
+
+
+
+on rightclick with Diamond Axe:
+	if player is {lobby::%player%}:  
+		cancel event
+		if {boutique} or {discord} or {serveur} isn't set:
+			send "   " to all players
+			send "&4&l>> &cInfo &4&l<< &e- &cMerci de terminer la configuration du serveur pour pouvoir jouer." to all players
+			send "   " to all players
+			send "&4&l>> &cInfo &4&l<< &e- &cMettez-vous en tant que opérateur sur le serveur (/op <pseudo>) et ensuite faites /developpeur" to all players
+			send "   " to all players
+			stop  
+		else:
+			make player execute command "/staff"
+			stop
+
+
+on rightclick with Clock:
+	if player is {lobby::%player%}:  
+		cancel event
+		if {boutique} or {discord} or {serveur} isn't set:
+			send "   " to all players
+			send "&4&l>> &cInfo &4&l<< &e- &cMerci de terminer la configuration du serveur pour pouvoir jouer." to all players
+			send "   " to all players
+			send "&4&l>> &cInfo &4&l<< &e- &cMettez-vous en tant que opérateur sur le serveur (/op <pseudo>) et ensuite faites /developpeur" to all players
+			send "   " to all players
+			stop  
+		else:
+			wait 3 tick
+			open chest inventory with 5 rows named "   " to player
+			make a gui slot 0 of player with Red Stained Glass Pane named "&4Quitter" to close
+			make a gui slot 1 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 2 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 3 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 4 of player with Red Stained Glass Pane named "&4Quitter" to close
+			make a gui slot 5 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 6 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 7 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 8 of player with Red Stained Glass Pane named "&4Quitter" to close
+			make a gui slot 9 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 10 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 11 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+			make a gui slot 12 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 13 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 14 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 15 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 16 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 17 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 18 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 19 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 20 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 21 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 22 of player with fire charge named "&a&lPRISON RP &2&lSAISON 1" with lore "&8Aventure RôlePlay" and "  " and "&7PrisonRP est un mode de jeu" and "&7créé sur le jeu GMOD et adapté" and "&7sur le jeu Minecraft par" and "&7Stan et DraXy Adrien en 2015." and "&7Le but est que vous êtes un prisonnier," and "&7vous devez vous échappez de la Prison" and "&7à ce moment la vous allez pouvoir" and "&7créer la vie de vos rêves." and "   " and "&7Nombre de Prisonnier: &a%{PrisonRP.visit.draxy}%" and "&7Version: &e1.0" and "  " and " &e&l-> &eCliquez pour rejoindre !" and " &a&l-> &aClique droit pour jouer" and "  " to run:
+				make player execute command "/§PrisonRP"
+				stop
+			make a gui slot 23 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+			make a gui slot 24 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+			make a gui slot 25 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 26 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 27 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 28 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 29 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 30 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 31 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 32 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+			make a gui slot 33 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 34 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 35 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 36 of player with Red Stained Glass Pane named "&4Quitter" to close
+			make a gui slot 37 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 38 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+			make a gui slot 39 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 40 of player with Red Stained Glass Pane named "&4Quitter" to close
+			make a gui slot 41 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+			make a gui slot 42 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 43 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 44 of player with Red Stained Glass Pane named "&4Quitter" to close
+			stop
+		

@@ -1,0 +1,83 @@
+command /boutique:
+    trigger:
+        if {boutique} or {discord} or {serveur} isn't set:
+            send "&4&l>> &cInfo &4&l<< &e- &cMerci de terminer la configuration du serveur pour pouvoir jouer." to player
+            send "&4&l>> &cInfo &4&l<< &e- &cMettez-vous en tant qu'opérateur sur le serveur (/op <pseudo>) et ensuite faites /developpeur" to player
+            stop
+
+        open chest with 3 rows named "        &4&lBoutique &c%{serveur}%" to player
+        format gui slot 0 of player with red stained glass pane named "&4Quitter" to close
+        format gui slot 8 of player with red stained glass pane named "&4Quitter" to close
+        format gui slot 18 of player with red stained glass pane named "&4Quitter" to close
+        format gui slot 26 of player with red stained glass pane named "&4Quitter" to close
+
+        set {_slots::*} to 1 and 2 and 3 and 4 and 5 and 6 and 7 and 9 and 10 and 12 and 13 and 14 and 16 and 17 and 19 and 20 and 21 and 22 and 23 and 24 and 25
+        loop {_slots::*}:
+            format gui slot loop-value of player with white stained glass pane named "&cPrisonRP" to close
+
+        format gui slot 11 of player with Iron Ingot named "&aVIP &7(Rang n°1)" with lore "&7Durée: &bà vie" and "  " and "&fLe &bPlus &cBadasse &fdes &aGrades" and "&a> &fPrefix &e[&d&lV&e] &fdevant vos Métiers" and "&a> &fAccès Métier : &eChefGarde" and "&a> &fAccès Métier : &eB&f.&eR&f.&eI" and "&a> &fBoost des Payes &f: &ex2" and "&a> &fAccès aux Protections &f: &dVIP" and "&a> &fAccès Paye : &ePrisonnier" and "&a> &fAccès au Printer &f: &eLEVEL &dV" and "&a> &fAccès au Printer &f: &eLEVEL &dVI" and "&a> &fAccès au Printer &f: &eLEVEL &dVII" and "&a> &fBlocs plassables &f: &e+7" and "&a> &fSuicide réduit &f: &e-8 Minutes &f!" and "&a> &fTemps de Respawn &f: &e15s &f!" and "  " and "&cLes Grades ne sont en aucun" and "&ccas remboursables." and "&cTentative de fraude = ban à vie !" and "  " and "&7Clic gauche pour acheter" and "&a4 000 RP ou 4€" to run:
+            if {normal::%player%} is set:
+                if {coins::%player%} < 4000:
+                    send "&e&l>> &cDésolé, mais tu n'as pas assez de RPcoins !" to player
+                else if {vip::%player%} is set:
+                    send "&e&l>> &cDésolé, mais tu as déjà ce Grade !" to player
+                else:
+                    remove 4000 from {coins::%player%}
+                    set {vip::%player%} to player
+                    set {construction.nombre::%player%} to 14
+                    delete {normal::%player%}
+                    broadcast "&c====================================="
+                    broadcast "                   &4Livraison         "
+                    broadcast "                  &aGrade &dVIP   "
+                    broadcast "  "
+                    broadcast "    &dAcheter Aussi sur le Site %{boutique}%"
+                    broadcast "&c====================================="
+                    send "     "
+                    send "&e&l>> &cVous venez de recevoir votre Grade VIP !" to player
+                    add 10 to {counter.mort::%player%}
+                    add 30 to {add::%player%}
+            else:
+                send "&e>> &cInfo &e<< &6- &cTu possèdes déjà le grade V.I.P &e!" to player
+
+        format gui slot 15 of player with skull of "MrSnowDK" parsed as offline player named "&eRôlePlay Coins" with lore "    " and "&bNombre de Coins &f:" and "    " and "&e&l>> &f%{coins::%player%}% &cRP &eCoins" and "    " to run:
+            make player execute command "/coins"
+        stop
+
+command /clearallrpcoins:
+	trigger:
+		if player is {dev::%player%} or op:
+			clear {coins::*}
+			broadcast "&4&l>> &cINFO &4&l<< &6- &e%player% a remis les RPCoins de tous les comptes à &b&l0 &e!"
+			stop
+
+command /coins:
+    trigger:
+        send "&e>> &aVous avez &e%{coins::%player%}% &ade &bRP Coins &a!" to player
+        stop
+
+command /coinsadd [<number>] [<text>]:
+    usage: &c/coinsadd <coins> <player>
+    trigger:
+        if player is op:
+            if arg 1 is not set:
+                send "/coinsadd <coins> <player>" to player
+            else if arg 2 is not set:
+                send "/coinsadd <coins> <player>" to player
+            else:
+                add arg 1 to {coins::%arg 2%}
+                send "&e>> &cVous venez d'ajouter &e%arg 1% &cà &b%arg 2% &csolde du joueur : &e%{coins::%arg 2%}% &cde Coins !" to player
+            stop
+
+command /coinsremove [<number>] [<text>]:
+    usage: &c/coinsremove <coins> <player>
+    trigger:
+        if player is op:
+            if arg 1 is not set:
+                send "/coinsremove <coins> <player>" to player
+            else if arg 2 is not set:
+                send "/coinsremove <coins> <player>" to player
+            else:
+                remove arg 1 from {coins::%arg 2%}
+                send "&e>> &cVous venez de retirer &e%arg 1%&c, il reste au joueur &f: &e%{coins::%arg 2%}% &cde Coins !" to player
+            stop
+

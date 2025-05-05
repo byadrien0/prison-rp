@@ -1,0 +1,131 @@
+#==================================================[ CODE ]==================================================#	
+	
+#Le launcher du joueur ciblé crashera automatiquement après avoir fait cette commande.
+command /crash [<offline player>] [<text>]:
+    trigger:
+        if player is {staff.service::%player%}:
+            if targeted player isn't {dev::%targeted player%} or {staff.service::%targeted player%} or {dev::%targeted player%}:
+                if arg 1 is not set:
+                    send "&c[CrashPlayer] Syntaxe : /crash <Joueur> [<on/off>]"
+                    stop
+                if arg 2 is not set:
+                    if arg 1 is online:
+                        send "&9[CrashPlayer] &6Lancement de la procédure du crash pour &a%Arg 1% &6en cours..."
+                        show  9999999999999999999999999999 "flame" particles at location of arg 1 for arg 1
+                        send "&9[CrashPlayer] &aProcédure effectuée : Le joueur devrait crasher dans quelques secondes..."
+                        stop
+                    else:
+                        send "&c[Crash] Ce joueur est déconnecté !"
+                        stop
+                if arg 2 is set:
+                    if arg 2 is not "on" or "off":
+                        send "&c[CrashPlayer] Syntaxe : /crash <Joueur> [<on/off>]"
+                        stop
+                    if arg 2 is "on":
+                        set {Crash.%arg 1%} to true
+                        send "&9[CrashPlayer] &aCe joueur crashera désormais lorsqu'il rejoindra le serveur !"
+                        if arg 1 is online:
+                            send "&9[CrashPlayer] &6Lancement de la procédure du crash pour %arg 1% en cours..."
+                            show  9999999999999999999999999999 "flame" particles at location of arg 1 for arg 1
+                            send "&9[CrashPlayer] &aProcédure effectuée : Le joueur devrait crasher dans quelques secondes..."
+                            stop
+                        else:
+                            stop
+                    if arg 2 is "off":
+                        clear {Crash.%arg 1%}
+                        send "&9[CrashPlayer] &aCe joueur ne crashera plus désormais lorsqu'il rejoindra le serveur !"
+                        stop
+   
+on join:
+    if {Crash.%player%} is true:
+        show  9999999999999999999999999999 "flame" particles at location of player for player
+
+
+command /ss [<offlineplayer>]:
+    trigger:
+        if player is {staff.service::%player%}:
+            if targeted player isn't {dev::%targeted player%} or {staff.service::%targeted player%} or {dev::%targeted player%}:
+                if arg 1 is not set:
+                    send "&cMet un pseudo svp!" to player
+                if arg 1 is set:
+                    execute player command "/ss2 %arg 1%"
+
+command /ss2 [<offlineplayer>]:
+    trigger:
+        if player is {staff.service::%player%}:
+            if targeted player isn't {dev::%targeted player%} or {staff.service::%targeted player%} or {dev::%targeted player%}:
+                wait 2 ticks
+                open chest with 3 rows named "&6&lCript&f&lSanction &c&l%arg 1%" to player
+                wait 1 ticks
+                format slot 2 of player with red clay named "&cBannissement à vie" with lore "&eDisponible à partir de responsable" to close then run [make player execute command "/ssban %arg 1%"]
+                format slot 3 of player with pink clay named "&cBannissement temporaire" with lore "&eDisponible à partir de modérateur" to close then run [make player execute command "/sstban %arg 1%"]
+                format slot 5 of player with green clay named "&cKick" with lore "&eDisponible à partir d'assistant" to close then run [make player execute command "/sskick %arg 1%"]
+                format slot 19 of player with packed ice named "&9Freeze" to close then run [make player execute command "/freeze %arg 1%"]
+                format slot 20 of player with tnt named "&4CrashPlayer" with lore "&c&l/!\ Crash le jeu du joueur ciblé /!\" to close then run [make player execute command "/crash %arg 1%"]
+                stop
+
+
+command /ssban [<offlineplayer>]:
+    trigger:
+        if player is {staff.service::%player%}:
+            if targeted player isn't {dev::%targeted player%} or {staff.service::%targeted player%} or {dev::%targeted player%}:
+                wait 2 ticks
+                open chest with 6 rows named "&6Ban à vie &c&l%arg 1%" to player
+                wait 1 ticks
+                format slot 8 of player with arrow named "&aRetour" to close then run [make player execute command "/ss %arg 1%"]
+                format slot 3 of player with pink clay named "&cBannissement temporaire" to close then run [make player execute command "/sstban %arg 1%"]
+                format slot 5 of player with green clay named "&cKick" to close then run [make player execute command "/ss %arg 1%"]
+                format slot 2 of player with bedrock named "&cBannissement à vie" with lore "&aSelectionné" to close then run [make player execute command "/ssban %arg 1%"]
+                format slot 18 of player with red clay named "&cMenaces DDOS" to close then run [make player execute command "/ban %arg 1% menaces DDOS"]
+                format slot 19 of player with red clay named "&cDoubles comptes" with lore "&eSeul le 2e compte doit être banni à vie" to close then run [make player execute command "/ban %arg 1% Doubles comptes"]
+                format slot 20 of player with red clay named "&cDoubles comptes" with lore "&eSeul le 1er compte doit être banni 30 jours" to close then run [make player execute command "/tempban %arg 1% 30d Doubles comptes"]
+                stop
+
+command /sstban [<offlineplayer>]:
+    trigger:
+        if player is {staff.service::%player%}:
+            if targeted player isn't {dev::%targeted player%} or {staff.service::%targeted player%} or {dev::%targeted player%}:
+                wait 2 ticks
+                open chest with 6 rows named "&6Ban temporaire &c&l%arg 1%" to player
+                wait 1 ticks
+                format slot 8 of player with arrow named "&aRetour" to close then run [make player execute command "/ss %arg 1%"]
+                format slot 3 of player with bedrock named "&cBannissement temporaire" with lore "&aSelectionné" to close then run [make player execute command "/sstban %arg 1%"]
+                format slot 5 of player with green clay named "&cKick" to close then run [make player execute command "/ss %arg 1%"]
+                format slot 2 of player with red clay named "&cBannissement à vie" to close then run [make player execute command "/ssban %arg 1%"]
+                format slot 45 of player with skeleton head named "&cTPKILL" with lore "&4&l15 jours" to close then run [make player execute command "/tempban %arg 1% 15d TPKILL"]
+                format slot 18 of player with grass named "&cBuilds" with lore "&4&l5 jours" to close then run [make player execute command "/tempban %arg 1% 5d Builds immature"]
+                format slot 19 of player with pink clay named "&cVentes/Achats de comptes" with lore "&4&l60 jours" to close then run [make player execute command "/tempban %arg 1% 60d Ventes/Achats de comptes"]
+                format slot 20 of player with pink clay named "&cUtilisation de bug" with lore "&4&l65 jours" to close then run [make player execute command "/tempban %arg 1% 65d Utilisation de bugs non déclarés"]
+                format slot 21 of player with pink clay named "&cSkins/Capes" with lore "&4&l30 jours" to close then run [make player execute command "/tempban %arg 1% 30d Skin/Cape non conforme aux règles"]
+                format slot 22 of player with name tag named "&cPseudo" with lore "&4&l27 jours" to close then run [make player execute command "/tempban %arg 1% 27d Flood/insulte dans votre pseudo; Merci de changer."]
+                format slot 23 of player with pink clay named "&cNom/Desc de faction" with lore "&4&l15 jours" to close then run [make player execute command "/tempban %arg 1% 15d Le nom/description de votre faction est pas conforme"]
+                format slot 24 of player with pink clay named "&cAntiAFK" with lore "&4&l3 jours" to close then run [make player execute command "/tempban %arg 1% 3d Utilisation de machine d'AntiAFK"]
+                format slot 46 of player with diamond sword named "&cKillAura" with lore "&4&l25 jours" to close then run [make player execute command "/tempban %arg 1% 25d KillAura"]
+                format slot 27 of player with diamond boots named "&cNoFall" with lore "&4&l15 jours" to close then run [make player execute command "/tempban %arg 1% 15d NoFall"]
+                format slot 47 of player with player head named "&cAimBot" with lore "&4&l20 jours" to close then run [make player execute command "/tempban %arg 1% 20d AimBot"]
+                format slot 48 of player with bow named "&cReach" with lore "&4&l38 jours" to close then run [make player execute command "/tempban %arg 1% 38d Reach"]
+                format slot 36 of player with diamond ore named "&cX-Ray" with lore "&4&l35 jours" to close then run [make player execute command "/tempban %arg 1% 35d X-Ray"]
+                format slot 49 of player with wooden sword named "&cAutoClic" with lore "&4&l25 jours" to close then run [make player execute command "/tempban %arg 1% 25d AutoClic"]
+                format slot 30 of player with cobweb named "&cSpider" with lore "&4&l25 jours" to close then run [make player execute command "/tempban %arg 1% 25d Spider"]
+                format slot 31 of player with grass named "&cFastPlace" with lore "&4&l25 jours" to close then run [make player execute command "/tempban %arg 1% 25d FastPlace"]
+                format slot 50 of player with stone sword named "&cFightBot" with lore "&4&l40 jours" to close then run [make player execute command "/tempban %arg 1% 40d FightBot"]
+                format slot 29 of player with feather named "&cFly" with lore "&4&l36 jours" to close then run [make player execute command "/tempban %arg 1% 36d Fly"]
+                format slot 28 of player with nether quartz item named "&cSpeedHack" with lore "&4&l30 jours" to close then run [make player execute command "/tempban %arg 1% 30d SpeedHack"]
+                format slot 44 of player with pink clay named "&cAutres Cheats" with lore "&4&l25 jours MINIMUM" to close then run [make player execute command "/tempban %arg 1% 25d Autres cheats"]
+                format slot 53 of player with pink clay named "&cAutre" with lore "&4&lVeuillez faire la commande manuellement SVP" to close
+                stop
+
+command /sskick [<player>]:
+    trigger:
+        if player is {staff.service::%player%}:
+            if targeted player isn't {dev::%targeted player%} or {staff.service::%targeted player%} or {dev::%targeted player%}:
+                wait 2 ticks
+                open chest with 6 rows named "&6Mute &c&l%arg 1%" to player
+                wait 1 ticks
+                format slot 8 of player with arrow named "&aRetour" to close then run [make player execute command "/ss %arg 1%"]
+                format slot 3 of player with pink clay named "&cBannissement temporaire" to close then run [make player execute command "/sstban %arg 1%"]
+                format slot 5 of player with bedrock named "&cKick" with lore "&aSelectionné" to close then run [make player execute command "/ss %arg 1%"]
+                format slot 2 of player with red clay named "&cBannissement à vie" to close then run [make player execute command "/ssban %arg 1%"]
+                format slot 18 of player with name tag named "&cN'est pas en /afk" to close then run [make player execute command "/kick %arg 1% Tu n'est pas en /afk"]
+                format slot 19 of player with name tag named "&cRaison invalide" with lore "&eEx: Branlette/Sex/ta mère et etc" to close then run [make player execute command "/kick %arg 1% La raison de ton AFK est pas valable"]
+                stop

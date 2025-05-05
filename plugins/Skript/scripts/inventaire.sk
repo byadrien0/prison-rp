@@ -1,0 +1,41 @@
+
+#--------------------------------------------------------------#
+#                     ~ inventaire ~                           #
+#--------------------------------------------------------------#
+	
+	
+on inventory close:
+	if player isn't {lobby::%player%} or {dev::%player%} or {staff.service::%player%}:
+		set slot 9 of player to barrier named "   "
+		set slot 10 of player to barrier named "   "
+		set slot 11 of player to barrier named "   "
+		set slot 12 of player to barrier named "   "
+		set slot 13 of player to barrier named "   "
+		set slot 14 of player to barrier named "   "
+		set slot 15 of player to barrier named "   "
+		set slot 16 of player to barrier named "   "
+		set slot 17 of player to barrier named "   "
+		stop
+
+
+
+command /saveinv <text>:
+	permission: inventaires.save
+	trigger:
+		wait 1 ticks
+		set {draxy::%arg 1%} to player's offhand
+		stop
+	
+						
+command /invsee [<player>]:
+	permission: staff.essential
+	permission message: &e&l>> &cVous n'avez pas la permission !
+	trigger:
+		if arg 1 is not set:
+			send "&cUtilisation: /invsee <joueur>"
+			stop
+		if arg 1 is set:
+			open the arg-1's inventory for the player
+			stop
+
+

@@ -1,0 +1,884 @@
+on craft:
+	if player is in world "world":  
+		cancel event
+		send "&e&l>> &cVous ne pouvez pas crafter sur le serveur !" to player
+		stop
+
+command /§vendeur_constructeur: 
+	trigger:
+		if player is in world "world":  
+			wait 3 tick
+			open chest inventory with 6 rows named "   " to player
+			make a gui slot 0 of player with Red Stained Glass Pane named "&4Quitter" to close
+			make a gui slot 1 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 2 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 3 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 4 of player with Red Stained Glass Pane named "&4Quitter" to close
+			make a gui slot 5 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 6 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 7 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 8 of player with Red Stained Glass Pane named "&4Quitter" to close	
+			make a gui slot 9 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 10 of player with Oak Log named "&cPrisonRP" with lore "&8Clique droit pour voir" and "&8la liste des différentes bûches" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Bûche" and "&6>> &eOffres&7: &68 Bûches" and "  " and "&7&l----------------------" to run:
+				wait 3 tick
+				open chest inventory with 5 rows named "   " to player
+				make a gui slot 0 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 1 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 2 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 3 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 4 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 5 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 6 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 7 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 8 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 9 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 10 of player with Oak Log named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Bûche chêne" and "&6>> &eQuantité&7: &6x3" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 3 Oak Log to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop
+				make a gui slot 11 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 12 of player with Spruce Log named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Bûche de Sapin" and "&6>> &eQuantité&7: &6x3" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 3 Spruce Log to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop			
+				make a gui slot 13 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 14 of player with Birch Log named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Bûche de bouleau" and "&6>> &eQuantité&7: &6x3" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 3 Birch Log to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 15 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 16 of player with Jungle Log named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Bûche d'acajou" and "&6>> &eQuantité&7: &6x3" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 3 Jungle Log to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop							
+				make a gui slot 17 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 18 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 19 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 20 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 21 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 22 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 23 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 24 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 25 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 26 of player with White Stained Glass Pane named "&cPrisonRP" to close			
+				make a gui slot 27 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 28 of player with Acacia Log named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Bûche d'acacia" and "&6>> &eQuantité&7: &6x3" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 3 Acacia Log to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 29 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 30 of player with Dark Oak Log named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Bûche de chêne noir" and "&6>> &eQuantité&7: &6x3" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 3 Dark Oak Log to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop					
+				make a gui slot 31 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 35 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 36 of player with Red Stained Glass Pane named "&4Quitter" to close	
+				make a gui slot 37 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 38 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 39 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 40 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 41 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 42 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 43 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 44 of player with Red Stained Glass Pane named "&4Quitter" to close		
+				stop
+			make a gui slot 11 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+			make a gui slot 12 of player with Sea lantern named "&cPrisonRP" with lore "&8Clique droit pour voir" and "&8la liste des différentes lumières" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Lumières" and "&6>> &eOffres&7: &68 Lumières" and "  " and "&7&l----------------------" to run:
+				wait 3 tick
+				open chest inventory with 5 rows named "   " to player
+				make a gui slot 0 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 1 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 2 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 3 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 4 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 5 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 6 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 7 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 8 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 9 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 13 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 14 of player with Redstone lamp named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Lampe à redstone" and "&6>> &eQuantité&7: &6x1" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 1 Redstone lamp to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 15 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 16 of player with Sea lantern named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Lanterne aquatique" and "&6>> &eQuantité&7: &6x1" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 1 Sea lantern to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop					
+				make a gui slot 17 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 18 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 19 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 20 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 21 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 22 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 23 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 24 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 25 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 26 of player with White Stained Glass Pane named "&cPrisonRP" to close			
+				make a gui slot 27 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 28 of player with Glowstone named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Pierre lumineuse" and "&6>> &eQuantité&7: &6x1" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 1 Glowstone to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop					
+				make a gui slot 29 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 30 of player with Redstone Block named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Block de Redstone" and "&6>> &eQuantité&7: &6x1" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 1 Redstone Block to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 31 of player with White Stained Glass Pane named "&cPrisonRP" to close					
+				make a gui slot 35 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 36 of player with Red Stained Glass Pane named "&4Quitter" to close	
+				make a gui slot 37 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 38 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 39 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 40 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 41 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 42 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 43 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 44 of player with Red Stained Glass Pane named "&4Quitter" to close
+				stop			
+			make a gui slot 13 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+			make a gui slot 14 of player with Oak planks named "&cPrisonRP" with lore "&8Clique droit pour voir" and "&8la liste des différentes planches de bois" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Planches" and "&6>> &eOffres&7: &68 Planches" and "  " and "&7&l----------------------" to run:
+				wait 3 tick
+				open chest inventory with 5 rows named "   " to player
+				make a gui slot 0 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 1 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 2 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 3 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 4 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 5 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 6 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 7 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 8 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 9 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 10 of player with Oak planks named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Planches de chêne" and "&6>> &eQuantité&7: &6x3" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 3 Oak planks to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 11 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 12 of player with Spruce planks named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Planches de Sapin" and "&6>> &eQuantité&7: &6x3" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 3 Spruce planks to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 13 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 14 of player with Birch planks named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Planches de bouleau" and "&6>> &eQuantité&7: &6x3" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 3 Birch planks to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop						
+				make a gui slot 15 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 16 of player with Jungle planks named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Planches d'acajou" and "&6>> &eQuantité&7: &6x3" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 3 Jungle planks to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop			
+				make a gui slot 17 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 18 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 19 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 20 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 21 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 22 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 23 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 24 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 25 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 26 of player with White Stained Glass Pane named "&cPrisonRP" to close			
+				make a gui slot 27 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 28 of player with acacia planks named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Planches d'acacia" and "&6>> &eQuantité&7: &6x3" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 3 acacia planks to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 29 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 30 of player with Dark Oak planks named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Planches de chêne noir" and "&6>> &eQuantité&7: &6x3" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 3 Dark Oak planks to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 31 of player with White Stained Glass Pane named "&cPrisonRP" to close				
+				make a gui slot 35 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 36 of player with Red Stained Glass Pane named "&4Quitter" to close	
+				make a gui slot 37 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 38 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 39 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 40 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 41 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 42 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 43 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 44 of player with Red Stained Glass Pane named "&4Quitter" to close
+				stop		
+			make a gui slot 15 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 16 of player with glass named "&cPrisonRP" with lore "&8Clique droit pour voir" and "&8la liste des différentes vitres" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Vitres" and "&6>> &eOffres&7: &68 vitres" and "  " and "&7&l----------------------" to run:
+				wait 3 tick
+				open chest inventory with 5 rows named "   " to player
+				make a gui slot 0 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 1 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 2 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 3 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 4 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 5 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 6 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 7 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 8 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 9 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 10 of player with glass named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Vitre normal" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 glass to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop			
+				make a gui slot 11 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 12 of player with White Stained Glass named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Vitre blanche" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 White Stained Glass to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 13 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 14 of player with Magenta Stained Glass named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Vitre Magenta" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Magenta Stained Glass to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop			
+				make a gui slot 15 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 16 of player with Light blue Stained Glass named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Vitre bleu clair" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Light blue Stained Glass to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop						
+				make a gui slot 17 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 18 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 19 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 20 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 21 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 22 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 23 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 24 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 25 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 26 of player with White Stained Glass Pane named "&cPrisonRP" to close			
+				make a gui slot 27 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 28 of player with Black Stained Glass named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Vitre noir" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Black Stained Glass to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop								
+				make a gui slot 29 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 30 of player with Red Stained Glass named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Vitre rouge" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Red Stained Glass to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop			
+				make a gui slot 31 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 32 of player with Blue Stained Glass named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Vitre bleu" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Blue Stained Glass to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 33 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 34 of player with Lime Stained Glass named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Vitre vert clair" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Lime Stained Glass to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 35 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 36 of player with Red Stained Glass Pane named "&4Quitter" to close	
+				make a gui slot 37 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 38 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 39 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 40 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 41 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 42 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 43 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 44 of player with Red Stained Glass Pane named "&4Quitter" to close
+				stop		
+			make a gui slot 17 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 18 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+			make a gui slot 19 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+			make a gui slot 20 of player with Oak Slab named "&cPrisonRP" with lore "&8Clique droit pour voir" and "&8la liste des différentes dalles" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Dalles" and "&6>> &eOffres&7: &68 dalles" and "  " and "&7&l----------------------" to run:
+				wait 3 tick
+				open chest inventory with 5 rows named "   " to player
+				make a gui slot 0 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 1 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 2 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 3 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 4 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 5 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 6 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 7 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 8 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 9 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 10 of player with Oak Slab named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Dalle en chêne" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Oak Slab to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 11 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 12 of player with Spruce Slab named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Dalle en Sapin" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Spruce Slab to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop			
+				make a gui slot 13 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 14 of player with Birch Slab named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Dalle en bouleau" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Birch Slab to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 15 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 16 of player with Jungle Slab named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Dalle en acajou" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Jungle Slab to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop					
+				make a gui slot 17 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 18 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 19 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 20 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 21 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 22 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 23 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 24 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 25 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 26 of player with White Stained Glass Pane named "&cPrisonRP" to close			
+				make a gui slot 27 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 28 of player with Acacia Slab named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Dalle en acacia" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Acacia Slab to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 29 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 30 of player with Dark oak Slab named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Dalle en chêne noir" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Dark oak Slab to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop					
+				make a gui slot 31 of player with White Stained Glass Pane named "&cPrisonRP" to close					
+				make a gui slot 35 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 36 of player with Red Stained Glass Pane named "&4Quitter" to close	
+				make a gui slot 37 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 38 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 39 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 40 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 41 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 42 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 43 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 44 of player with Red Stained Glass Pane named "&4Quitter" to close
+				stop	
+			make a gui slot 21 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 22 of player with Cobblestone Stairs named "&cPrisonRP" with lore "&8Clique droit pour voir" and "&8la liste des différentes escaliers" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6escaliers" and "&6>> &eOffres&7: &68 escaliers" and "  " and "&7&l----------------------" to run:
+				wait 3 tick
+				open chest inventory with 5 rows named "   " to player
+				make a gui slot 0 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 1 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 2 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 3 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 4 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 5 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 6 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 7 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 8 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 9 of player with White Stained Glass Pane named "&cPrisonRP" to close				
+				make a gui slot 11 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 12 of player with Cobblestone Stairs named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Escalier en pierre" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Cobblestone Stairs to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 13 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 14 of player with Brick Stairs named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Escalier en briques" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Brick Stairs to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 15 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 16 of player with Stone Brick Stairs named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Escalier en pierre taillée" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Stone Brick Stairs to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 17 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 18 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 19 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 20 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 21 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 22 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 23 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 24 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 25 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 26 of player with White Stained Glass Pane named "&cPrisonRP" to close			
+				make a gui slot 27 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 28 of player with Sandstone Stairs named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Escalier en grès" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Sandstone Stairs to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop						
+				make a gui slot 29 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 30 of player with Spruce Stairs named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Escalier en Sapin" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Spruce Stairs to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop			
+				make a gui slot 31 of player with White Stained Glass Pane named "&cPrisonRP" to close					
+				make a gui slot 35 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 36 of player with Red Stained Glass Pane named "&4Quitter" to close	
+				make a gui slot 37 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 38 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 39 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 40 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 41 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 42 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 43 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 44 of player with Red Stained Glass Pane named "&4Quitter" to close
+				stop	
+			make a gui slot 23 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 24 of player with Oak Fence named "&cPrisonRP" with lore "&8Clique droit pour voir" and "&8la liste des différentes barrières" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6barrières" and "&6>> &eOffres&7: &68 barrières" and "  " and "&7&l----------------------" to run:
+				wait 3 tick
+				open chest inventory with 5 rows named "   " to player
+				make a gui slot 0 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 1 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 2 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 3 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 4 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 5 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 6 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 7 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 8 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 9 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 10 of player with Oak Fence named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6barrières en chêne" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Oak Fence to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 11 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 12 of player with Spruce Fence named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6barrières en Sapin" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Spruce Fence to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 13 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 14 of player with Birch Fence named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6barrières en bouleau" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Birch Fence to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 15 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 16 of player with Jungle Fence named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6barrières en acajou" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Jungle Fence to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 17 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 18 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 19 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 20 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 21 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 22 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 23 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 24 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 25 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 26 of player with White Stained Glass Pane named "&cPrisonRP" to close			
+				make a gui slot 27 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 28 of player with Acacia Fence named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6barrières en acacia" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Acacia Fence to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 29 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 30 of player with Dark Oak Fence named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6barrières en chêne noir" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Dark Oak Fence to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 31 of player with White Stained Glass Pane named "&cPrisonRP" to close						
+				make a gui slot 35 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 36 of player with Red Stained Glass Pane named "&4Quitter" to close	
+				make a gui slot 37 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 38 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 39 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 40 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 41 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 42 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 43 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 44 of player with Red Stained Glass Pane named "&4Quitter" to close
+				stop	
+			make a gui slot 25 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+			make a gui slot 26 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 27 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 28 of player with Iron Trapdoor named "&cPrisonRP" with lore "&8Clique droit pour voir" and "&8la liste des différentes portes" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6portes" and "&6>> &eOffres&7: &68 portes" and "  " and "&7&l----------------------" to run:
+				wait 3 tick
+				open chest inventory with 5 rows named "   " to player
+				make a gui slot 0 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 1 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 2 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 3 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 4 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 5 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 6 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 7 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 8 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 9 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 10 of player with Iron Trapdoor named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Portes en Fer" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Iron Door to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 11 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 12 of player with Iron Trapdoor named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Portes en chêne" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Oak Door to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 13 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 14 of player with Iron Trapdoor named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Portes en Sapin" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Spruce Door to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 15 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 16 of player with Iron Trapdoor named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Portes en bouleau" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Birch Door to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 17 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 18 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 19 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 20 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 21 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 22 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 23 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 24 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 25 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 26 of player with White Stained Glass Pane named "&cPrisonRP" to close			
+				make a gui slot 27 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 28 of player with Iron Trapdoor named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Portes en acajou" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Jungle Door to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop			
+				make a gui slot 29 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 30 of player with Iron Trapdoor named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Portes en acacia" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Acacia Door to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop				
+				make a gui slot 31 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 32 of player with Iron Trapdoor named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Portes en chêne noir" and "&6>> &eQuantité&7: &6x2" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 17:
+						send "&e&l>> &cTu n'as pas 17€" to player
+						stop
+					else:
+						remove 17 from {money::%player%}
+						give 2 Dark oak Door to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop						
+				make a gui slot 35 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 36 of player with Red Stained Glass Pane named "&4Quitter" to close	
+				make a gui slot 37 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 38 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 39 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 40 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 41 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 42 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 43 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 44 of player with Red Stained Glass Pane named "&4Quitter" to close
+				stop	
+			make a gui slot 29 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 30 of player with chest named "&cPrisonRP" with lore "&8Clique droit pour voir" and "&8la liste des différents coffres" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6coffres" and "&6>> &eOffres&7: &61 coffres" and "  " and "&7&l----------------------" to run:
+				wait 3 tick
+				open chest inventory with 5 rows named "   " to player
+				make a gui slot 0 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 1 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 2 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 3 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 4 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 5 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 6 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 7 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 8 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 9 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 10 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 11 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 12 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 13 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 14 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 15 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 16 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 17 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 18 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 19 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 20 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 21 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 22 of player with chest named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Coffre" and "&6>> &eQuantité&7: &6x1" and "&6>> &ePrix&7: &655 000€" and "  " and "&7&l----------------------" to run:
+					if {money::%player%} is less than 55000:
+						send "&e&l>> &cTu n'as pas 55 000€" to player
+						stop
+					else:
+						remove 55000 from {money::%player%}
+						give 1 chest to player
+						send "&e&l>> &aTu viens d'acheter un objet." to player
+						stop
+				make a gui slot 23 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 24 of player with White Stained Glass Pane named "&cPrisonRP" to close			
+				make a gui slot 25 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 26 of player with White Stained Glass Pane named "&cPrisonRP" to close			
+				make a gui slot 27 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 28 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 29 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 30 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 31 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 32 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 33 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 34 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 35 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 36 of player with Red Stained Glass Pane named "&4Quitter" to close	
+				make a gui slot 37 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+				make a gui slot 38 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 39 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 40 of player with Red Stained Glass Pane named "&4Quitter" to close
+				make a gui slot 41 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 42 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+				make a gui slot 43 of player with White Stained Glass Pane named "&cPrisonRP" to close
+				make a gui slot 44 of player with Red Stained Glass Pane named "&4Quitter" to close
+				stop	
+			make a gui slot 31 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+			make a gui slot 32 of player with bed named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6lit blanc" and "&6>> &eQuantité&7: &6x1" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+				if {money::%player%} is less than 17:
+					send "&e&l>> &cTu n'as pas 17€" to player
+					stop
+				else:
+					remove 17 from {money::%player%}
+					give 1 bed to player
+					send "&e&l>> &aTu viens d'acheter un objet." to player
+					stop
+			make a gui slot 33 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 34 of player with Lever named "&cPrisonRP" with lore "&8Clique droit pour obtenir l'objet" and "&7&l----------------------" and "  " and "&6>> &eType&7: &6Levier de pierre" and "&6>> &eQuantité&7: &6x1" and "&6>> &ePrix&7: &617€" and "  " and "&7&l----------------------" to run:
+				if {money::%player%} is less than 17:
+					send "&e&l>> &cTu n'as pas 17€" to player
+					stop
+				else:
+					remove 17 from {money::%player%}
+					give 1 Lever to player
+					send "&e&l>> &aTu viens d'acheter un objet." to player
+					stop				
+			make a gui slot 35 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 36 of player with White Stained Glass Pane named "&cPrisonRP" to close			
+			make a gui slot 37 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+			make a gui slot 38 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+			make a gui slot 39 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 40 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 41 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+			make a gui slot 42 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 43 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+			make a gui slot 44 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+			make a gui slot 45 of player with Red Stained Glass Pane named "&4Quitter" to close	
+			make a gui slot 46 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 47 of player with White Stained Glass Pane named "&cPrisonRP" to close
+			make a gui slot 48 of player with White Stained Glass Pane named "&cPrisonRP" to close	
+			make a gui slot 49 of player with Red Stained Glass Pane named "&4Quitter" to close	
+			make a gui slot 50 of player with White Stained Glass Pane named "&cPrisonRP" to close			
+			make a gui slot 51 of player with White Stained Glass Pane named "&cPrisonRP" to close		
+			make a gui slot 52 of player with White Stained Glass Pane named "&cPrisonRP" to close			
+			make a gui slot 53 of player with Red Stained Glass Pane named "&4Quitter" to close	
+			stop
+			
+			
