@@ -268,25 +268,6 @@ Accessible avec `/developpeur` (opérateurs uniquement).
 * 🧱 Construction libre temporaire sur la carte (limite de 6 blocs, durée limitée)
 * ✉️ Message du jour personnalisable (MOTD)
 
----
-
-## 📁 **Screenshots**
-
-🖼️ Retrouvez tous les screenshots dans le dossier `/screens` du dépôt :
-
-* 📷 prison, ville, camp rebelle, lobby, menus, métiers, PNJ, zones de minage, échappatoires, etc.
-
----
-
-## 🔧 Installation
-
-```bash
-git clone https://github.com/ton-utilisateur/mon-serveur-prisonrp.git
-```
-
-Copie ensuite le contenu dans ton dossier `world` de serveur Minecraft Java Edition compatible `1.20+`.
-
----
 
 ## 🤝 Contribution
 
