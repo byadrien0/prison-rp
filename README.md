@@ -248,6 +248,17 @@ Accessible avec `/developpeur` (opérateurs uniquement).
 * 🔍 Téléportation au-dessus de la prison pour modération
 * 👤 Modes "Personnel" et "Développeur" pour OPs
 
+![image](https://github.com/user-attachments/assets/d912e907-b995-4b61-b90b-98cc956d371e)
+![image](https://github.com/user-attachments/assets/dd4fa917-bb48-44c0-9a20-05abb817d3ae)
+![image](https://github.com/user-attachments/assets/84b1d4de-f43a-4747-8c3c-9da3b259259f)
+![image](https://github.com/user-attachments/assets/7bd3a4e2-38b8-40c7-b9f4-0fce7145a95a)
+![image](https://github.com/user-attachments/assets/bae50299-7517-4adc-a343-804556498e36)
+![image](https://github.com/user-attachments/assets/8cf2a0a7-b474-4210-b717-6ae17ba44bb4)
+![image](https://github.com/user-attachments/assets/32adcbe0-21a8-42d0-a5e0-c60cbc0954d9)
+![image](https://github.com/user-attachments/assets/be829456-4ee0-4206-a4f5-cc8d355fcfc7)
+![image](https://github.com/user-attachments/assets/b6b9757a-59bb-4a49-b534-a4bc922d6ad7)
+![image](https://github.com/user-attachments/assets/4f4f7744-39e0-4f7c-b33f-c8ad2596582e)
+![image](https://github.com/user-attachments/assets/ab90dba9-6030-41f5-99fe-b70eee24e803)
 
 
 ---
@@ -268,6 +279,23 @@ Accessible avec `/developpeur` (opérateurs uniquement).
 * 🧱 Construction libre temporaire sur la carte (limite de 6 blocs, durée limitée)
 * ✉️ Message du jour personnalisable (MOTD)
 
+![image](https://github.com/user-attachments/assets/672d8319-c2cf-471b-970f-7e32cd3438f5)
+![image](https://github.com/user-attachments/assets/5995de62-7b96-4408-a45a-5d5f789ab5fb)
+![image](https://github.com/user-attachments/assets/356e950d-0741-47c2-aedc-ac007ecdfcc2)
+![image](https://github.com/user-attachments/assets/603e56ae-cd29-4edd-a7de-b713341947ef)
+![image](https://github.com/user-attachments/assets/20d84399-85c0-41ff-a1ad-a2f489ef6beb)
+![image](https://github.com/user-attachments/assets/2d8b6e22-57fe-4346-8f71-9c57c078ca41)
+![image](https://github.com/user-attachments/assets/33970ae8-620c-405d-8d96-f411f4019a1a)
+![image](https://github.com/user-attachments/assets/fc58658a-f038-43d1-9b73-55ce91c41bbe)
+![image](https://github.com/user-attachments/assets/a3ce738f-1790-4514-b841-c8b3acc3cb97)
+![image](https://github.com/user-attachments/assets/5f35c97a-ce2f-492d-bfdd-0dc8c00b26a7)
+![image](https://github.com/user-attachments/assets/6da9aeca-0ff1-4d65-9df8-742bd21a18a8)
+![image](https://github.com/user-attachments/assets/5748c80b-e89a-41cc-a7d3-e22ba2d0064a)
+![image](https://github.com/user-attachments/assets/f3d2c652-b682-4d0d-b0d0-119aa214cf6a)
+![image](https://github.com/user-attachments/assets/7b1b7ee7-2e6f-4999-9cef-a66d5c2a55ea)
+![image](https://github.com/user-attachments/assets/0108f17c-95a3-4899-988a-4a3e7c2e4f1b)
+![image](https://github.com/user-attachments/assets/70b330ea-24af-4965-b052-df94748d7ee6)
+
 
 ## 🤝 Contribution
 
@@ -278,7 +306,7 @@ Fais un **pull request** ou ouvre une **issue** !
 
 ## 📬 Contact
 
-📧 Pour toute question ou collaboration, tu peux me contacter via GitHub ou Discord : `TonPseudo#0000`
+📧 Pour toute question ou collaboration, tu peux me contacter via Discord : `byadrien`
 
 ---
 
