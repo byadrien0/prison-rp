@@ -1,14 +1,14 @@
 ---
 
-# 🔗 Adresse IP du serveur de test : #
-
-92.112.193.41:25555
-
----
-
 # 🚔🔓 **Serveur Minecraft - Prison RP ** 🔓🚔
 
 *Un serveur complet et immersif pour une expérience Prison RolePlay inoubliable !*
+
+---
+
+# 🔗 Adresse IP du serveur de test : #
+
+92.112.193.41:25555
 
 ---
 
